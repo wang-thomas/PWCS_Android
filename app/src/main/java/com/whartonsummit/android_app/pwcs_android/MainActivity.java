@@ -18,9 +18,12 @@ public class MainActivity extends AppCompatActivity implements TestBlankFragment
         setContentView(R.layout.activity_main);
         FragmentPagerItemAdapter myAdapter = new FragmentPagerItemAdapter(
                 getSupportFragmentManager(), FragmentPagerItems.with(this)
-                .add("Hello", TestBlankFragment.class)
-                .add("Abraham", TestBlankFragment.class)
-                .add("Babson", TestBlankFragment.class)
+                .add("Finance", TestBlankFragment.class)
+                .add("International Relations", TestBlankFragment.class)
+                .add("Technology", TestBlankFragment.class)
+                .add("Social Responsibility", TestBlankFragment.class)
+                .add("Fashion", TestBlankFragment.class)
+                .add("Real Estate", TestBlankFragment.class)
                 .create());
 
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
