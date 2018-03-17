@@ -10,6 +10,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.support.v7.widget.Toolbar;
 import android.widget.Toast;
@@ -65,6 +66,7 @@ public class MainActivity extends AppCompatActivity implements TestBlankFragment
                         // navigation choices:
                         switch (menuItem.getItemId()) {
                             case R.id.nav_speakers:
+                                Toast.makeText(MainActivity.this, "Hello Toast" + menuItem.getItemId(), Toast.LENGTH_SHORT).show();
                                 startActivity(new Intent(MainActivity.this, SpeakersActivity.class), bundle);
                                 break;
                             case R.id.nav_more:
