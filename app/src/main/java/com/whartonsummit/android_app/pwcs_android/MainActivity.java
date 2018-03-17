@@ -65,7 +65,6 @@ public class MainActivity extends AppCompatActivity implements TestBlankFragment
                         // navigation choices:
                         switch (menuItem.getItemId()) {
                             case R.id.nav_speakers:
-                                Toast.makeText(MainActivity.this, "Hello Toast" + menuItem.getItemId(), Toast.LENGTH_SHORT).show();
                                 startActivity(new Intent(MainActivity.this, SpeakersActivity.class), bundle);
                                 break;
                             case R.id.nav_more:
