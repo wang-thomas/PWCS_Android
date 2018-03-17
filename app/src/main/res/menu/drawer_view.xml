@@ -2,16 +2,16 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_panels"
+            android:id="@+id/nav_agenda"
             android:icon="@drawable/ic_schedule_black_24dp"
-            android:title="Panels" />
+            android:title="Agenda" />
         <item
             android:id="@+id/nav_speakers"
             android:icon="@drawable/ic_people_black_24dp"
             android:title="Speakers" />
         <item
-            android:id="@+id/nav_events"
+            android:id="@+id/nav_more"
             android:icon="@drawable/ic_camera_black_24dp"
-            android:title="Events" />
+            android:title="More" />
     </group>
 </menu>

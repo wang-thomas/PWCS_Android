@@ -10,29 +10,28 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.support.v7.widget.Toolbar;
-import android.widget.Toast;
+import android.view.MenuItem;
 
 import com.ogaclejapan.smarttablayout.SmartTabLayout;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItemAdapter;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems;
 
-public class MainActivity extends AppCompatActivity implements TestBlankFragment.OnFragmentInteractionListener {
+public class MoreActivity extends AppCompatActivity implements TestBlankFragment.OnFragmentInteractionListener {
 
     private DrawerLayout mDrawerLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        setTitle("PWCS · Agenda");
+        setContentView(R.layout.activity_more);
+        setTitle("PWCS · More");
         mDrawerLayout = (DrawerLayout) findViewById(R.id.navigation_drawer);
         FragmentPagerItemAdapter myAdapter = new FragmentPagerItemAdapter(
                 getSupportFragmentManager(), FragmentPagerItems.with(this)
-                .add("Panels", TestBlankFragment.class)
-                .add("Schedule", TestBlankFragment.class)
-                .add("Events", TestBlankFragment.class)
+                .add("FAQ", TestBlankFragment.class)
+                .add("Emergency", TestBlankFragment.class)
+                .add("About Us", TestBlankFragment.class)
                 .create());
 
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
@@ -48,7 +47,7 @@ public class MainActivity extends AppCompatActivity implements TestBlankFragment
         actionbar.setHomeAsUpIndicator(R.drawable.ic_menu);
 
         NavigationView navigationView = findViewById(R.id.nav_view);
-        navigationView.setCheckedItem(R.id.nav_agenda);
+        navigationView.setCheckedItem(R.id.nav_more);
         navigationView.setNavigationItemSelectedListener(
                 new NavigationView.OnNavigationItemSelectedListener() {
                     @Override
@@ -57,18 +56,15 @@ public class MainActivity extends AppCompatActivity implements TestBlankFragment
                         menuItem.setChecked(true);
                         // close drawer when item is tapped
                         mDrawerLayout.closeDrawers();
-
-                        // !important! smooth animation:
-                        Bundle bundle = ActivityOptionsCompat.makeCustomAnimation(MainActivity.this,
+                        Bundle bundle = ActivityOptionsCompat.makeCustomAnimation(MoreActivity.this,
                                 android.R.anim.fade_in, android.R.anim.fade_out).toBundle();
-
-                        // navigation choices:
+                        // choices:
                         switch (menuItem.getItemId()) {
                             case R.id.nav_speakers:
-                                startActivity(new Intent(MainActivity.this, SpeakersActivity.class), bundle);
+                                startActivity(new Intent(MoreActivity.this, SpeakersActivity.class),bundle);
                                 break;
-                            case R.id.nav_more:
-                                startActivity(new Intent(MainActivity.this, MoreActivity.class), bundle);
+                            case R.id.nav_agenda:
+                                startActivity(new Intent(MoreActivity.this, MainActivity.class),bundle);
                                 break;
                             default:
                                 break;
