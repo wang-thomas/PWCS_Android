@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".SpeakersActivity" />
-        <activity android:name=".MoreActivity"></activity>
+        <activity android:name=".MoreActivity" />
+        <activity android:name=".ScheduleActivity"></activity>
     </application>
 
 </manifest>

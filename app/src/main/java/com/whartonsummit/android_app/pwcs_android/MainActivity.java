@@ -31,7 +31,6 @@ public class MainActivity extends AppCompatActivity implements TestBlankFragment
         FragmentPagerItemAdapter myAdapter = new FragmentPagerItemAdapter(
                 getSupportFragmentManager(), FragmentPagerItems.with(this)
                 .add("Panels", TestBlankFragment.class)
-                .add("Schedule", TestBlankFragment.class)
                 .add("Events", TestBlankFragment.class)
                 .create());
 
