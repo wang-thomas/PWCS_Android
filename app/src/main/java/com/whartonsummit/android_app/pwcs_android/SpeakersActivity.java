@@ -70,6 +70,9 @@ public class SpeakersActivity extends AppCompatActivity implements TestBlankFrag
                             case R.id.nav_agenda:
                                 startActivity(new Intent(SpeakersActivity.this, MainActivity.class),bundle);
                                 break;
+                            case R.id.nav_schedule:
+                                startActivity(new Intent(SpeakersActivity.this, ScheduleActivity.class),bundle);
+                                break;
                             default:
                                 break;
                         }

@@ -71,6 +71,9 @@ public class MainActivity extends AppCompatActivity implements TestBlankFragment
                             case R.id.nav_more:
                                 startActivity(new Intent(MainActivity.this, MoreActivity.class), bundle);
                                 break;
+                            case R.id.nav_schedule:
+                                startActivity(new Intent(MainActivity.this, ScheduleActivity.class),bundle);
+                                break;
                             default:
                                 break;
                         }

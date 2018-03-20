@@ -66,6 +66,9 @@ public class MoreActivity extends AppCompatActivity implements TestBlankFragment
                             case R.id.nav_agenda:
                                 startActivity(new Intent(MoreActivity.this, MainActivity.class),bundle);
                                 break;
+                            case R.id.nav_schedule:
+                                startActivity(new Intent(MoreActivity.this, ScheduleActivity.class),bundle);
+                                break;
                             default:
                                 break;
                         }
