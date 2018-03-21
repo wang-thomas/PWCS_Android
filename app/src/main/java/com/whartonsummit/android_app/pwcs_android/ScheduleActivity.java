@@ -17,7 +17,7 @@ import com.ogaclejapan.smarttablayout.SmartTabLayout;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItemAdapter;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems;
 
-public class ScheduleActivity extends AppCompatActivity implements TestBlankFragment.OnFragmentInteractionListener {
+public class ScheduleActivity extends AppCompatActivity implements TestBlankFragment.OnFragmentInteractionListener, TimelineFragment.OnFragmentInteractionListener {
 
     private DrawerLayout mDrawerLayout;
 
@@ -27,11 +27,12 @@ public class ScheduleActivity extends AppCompatActivity implements TestBlankFrag
         setContentView(R.layout.activity_schedule);
         setTitle("PWCS · Schedules");
         mDrawerLayout = (DrawerLayout) findViewById(R.id.navigation_drawer);
-        FragmentPagerItemAdapter myAdapter = new FragmentPagerItemAdapter(
+        FragmentPagerItemAdapter myAdapter;
+        myAdapter = new FragmentPagerItemAdapter(
                 getSupportFragmentManager(), FragmentPagerItems.with(this)
-                .add("Friday 13th", TestBlankFragment.class)
-                .add("Saturday 14th", TestBlankFragment.class)
-                .add("Sunday 15th", TestBlankFragment.class)
+                .add("Saturday 14th", TimelineFragment.class)
+                .add("Sunday 15th", TimelineFragment.class)
+                .add("More", TimelineFragment.class)
                 .create());
 
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
@@ -80,6 +81,11 @@ public class ScheduleActivity extends AppCompatActivity implements TestBlankFrag
 
     @Override
     public void onTestFragmentInteraction(Uri string) {
+
+    }
+
+    @Override
+    public void onTimelineFragmentInteraction(Uri uri) {
 
     }
 
