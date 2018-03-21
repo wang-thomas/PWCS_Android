@@ -30,9 +30,9 @@ public class ScheduleActivity extends AppCompatActivity implements TestBlankFrag
         FragmentPagerItemAdapter myAdapter;
         myAdapter = new FragmentPagerItemAdapter(
                 getSupportFragmentManager(), FragmentPagerItems.with(this)
+                .add("Friday 13th", TimelineFragment.class)
                 .add("Saturday 14th", TimelineFragment.class)
                 .add("Sunday 15th", TimelineFragment.class)
-                .add("More", TimelineFragment.class)
                 .create());
 
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);

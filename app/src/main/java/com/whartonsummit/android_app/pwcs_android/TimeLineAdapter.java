@@ -30,13 +30,13 @@ public class TimeLineAdapter extends RecyclerView.Adapter<TimeLineViewHolder>  {
     @Override
     public void onBindViewHolder(TimeLineViewHolder holder, int position) {
         holder.mDate.setVisibility(View.VISIBLE);
-        holder.mDate.setText("Hello World");
-
-        holder.mMessage.setText("This is good");
+        holder.mDate.setText("Finance Panel");
+        holder.mMessage.setText("This is awesome");
+        holder.mTimelineDesc.setText("Your RecyclerViewHolder should have an extra paramenter in constructor i.e viewType from onCreateViewHolder. You would also have to call the method initLine(viewType) in constructor definition.");
     }
 
     @Override
     public int getItemCount() {
-        return 1;
+        return 2;
     }
 }

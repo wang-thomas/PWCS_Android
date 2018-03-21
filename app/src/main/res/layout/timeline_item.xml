@@ -13,6 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         app:markerSize="20dp"
+        app:marker = "@drawable/ic_event_available"
         app:lineSize="3dp"
         app:line="@color/colorPrimaryDark"/>
 
@@ -30,15 +31,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:gravity="center"
             android:orientation="vertical">
 
             <android.support.v7.widget.AppCompatTextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/text_timeline_date"
-                android:textSize="12sp"
-                tools:text="24 JAN"/>
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="14dp"
+                tools:text="8AM - 9AM"/>
 
             <android.support.v7.widget.AppCompatTextView
                 android:layout_width="match_parent"
@@ -46,7 +47,18 @@
                 android:layout_marginTop="5dp"
                 android:id="@+id/text_timeline_title"
                 android:textColor="@android:color/black"
-                tools:text="Order Successfully Completed"/>
+                android:textSize="18dp"
+                tools:text="Finance Panel"/>
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:id="@+id/text_timeline_desc"
+                android:textAlignment="viewStart"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="12dp"
+                tools:text="Your RecyclerViewHolder should have an extra paramenter in constructor i.e viewType from onCreateViewHolder. You would also have to call the method initLine(viewType) in constructor definition."/>
 
         </LinearLayout>
 
