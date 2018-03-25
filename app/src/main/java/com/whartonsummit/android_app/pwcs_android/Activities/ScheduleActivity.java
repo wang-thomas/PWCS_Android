@@ -1,4 +1,4 @@
-package com.whartonsummit.android_app.pwcs_android;
+package com.whartonsummit.android_app.pwcs_android.Activities;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -16,22 +16,26 @@ import android.view.MenuItem;
 import com.ogaclejapan.smarttablayout.SmartTabLayout;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItemAdapter;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems;
+import com.whartonsummit.android_app.pwcs_android.Fragments.TestBlankFragment;
+import com.whartonsummit.android_app.pwcs_android.Fragments.TimelineFragment;
+import com.whartonsummit.android_app.pwcs_android.R;
 
-public class MoreActivity extends AppCompatActivity implements TestBlankFragment.OnFragmentInteractionListener {
+public class ScheduleActivity extends AppCompatActivity implements TestBlankFragment.OnFragmentInteractionListener, TimelineFragment.OnFragmentInteractionListener {
 
     private DrawerLayout mDrawerLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_more);
-        setTitle("PWCS · More");
+        setContentView(R.layout.activity_schedule);
+        setTitle("PWCS · Schedules");
         mDrawerLayout = (DrawerLayout) findViewById(R.id.navigation_drawer);
-        FragmentPagerItemAdapter myAdapter = new FragmentPagerItemAdapter(
+        FragmentPagerItemAdapter myAdapter;
+        myAdapter = new FragmentPagerItemAdapter(
                 getSupportFragmentManager(), FragmentPagerItems.with(this)
-                .add("FAQ", TestBlankFragment.class)
-                .add("Emergency", TestBlankFragment.class)
-                .add("About Us", TestBlankFragment.class)
+                .add("Friday 13th", TimelineFragment.class)
+                .add("Saturday 14th", TimelineFragment.class)
+                .add("Sunday 15th", TimelineFragment.class)
                 .create());
 
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
@@ -47,7 +51,7 @@ public class MoreActivity extends AppCompatActivity implements TestBlankFragment
         actionbar.setHomeAsUpIndicator(R.drawable.ic_menu);
 
         NavigationView navigationView = findViewById(R.id.nav_view);
-        navigationView.setCheckedItem(R.id.nav_more);
+        navigationView.setCheckedItem(R.id.nav_schedule);
         navigationView.setNavigationItemSelectedListener(
                 new NavigationView.OnNavigationItemSelectedListener() {
                     @Override
@@ -56,18 +60,18 @@ public class MoreActivity extends AppCompatActivity implements TestBlankFragment
                         menuItem.setChecked(true);
                         // close drawer when item is tapped
                         mDrawerLayout.closeDrawers();
-                        Bundle bundle = ActivityOptionsCompat.makeCustomAnimation(MoreActivity.this,
+                        Bundle bundle = ActivityOptionsCompat.makeCustomAnimation(ScheduleActivity.this,
                                 android.R.anim.fade_in, android.R.anim.fade_out).toBundle();
                         // choices:
                         switch (menuItem.getItemId()) {
-                            case R.id.nav_speakers:
-                                startActivity(new Intent(MoreActivity.this, SpeakersActivity.class),bundle);
+                            case R.id.nav_more:
+                                startActivity(new Intent(ScheduleActivity.this, MoreActivity.class),bundle);
                                 break;
                             case R.id.nav_agenda:
-                                startActivity(new Intent(MoreActivity.this, MainActivity.class),bundle);
+                                startActivity(new Intent(ScheduleActivity.this, MainActivity.class),bundle);
                                 break;
-                            case R.id.nav_schedule:
-                                startActivity(new Intent(MoreActivity.this, ScheduleActivity.class),bundle);
+                            case R.id.nav_speakers:
+                                startActivity(new Intent(ScheduleActivity.this, SpeakersActivity.class),bundle);
                                 break;
                             default:
                                 break;
@@ -80,6 +84,11 @@ public class MoreActivity extends AppCompatActivity implements TestBlankFragment
 
     @Override
     public void onTestFragmentInteraction(Uri string) {
+
+    }
+
+    @Override
+    public void onTimelineFragmentInteraction(Uri uri) {
 
     }
 

@@ -9,16 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/NavAppTheme">
-        <activity android:name=".ScheduleActivity">
+        <activity android:name=".Activities.ScheduleActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SpeakersActivity" />
-        <activity android:name=".MoreActivity" />
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".Activities.SpeakersActivity" />
+        <activity android:name=".Activities.MoreActivity" />
+        <activity android:name=".Activities.MainActivity"></activity>
     </application>
 
 </manifest>

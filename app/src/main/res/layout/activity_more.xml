@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.whartonsummit.android_app.pwcs_android.MoreActivity">
+    tools:context="com.whartonsummit.android_app.pwcs_android.Activities.MoreActivity">
 
     <!-- Layout to contain contents of main body of screen (drawer will slide over this) -->
     <android.support.constraint.ConstraintLayout

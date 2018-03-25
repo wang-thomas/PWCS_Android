@@ -14,10 +14,10 @@ import butterknife.ButterKnife;
  */
 
 public class TimeLineViewHolder extends RecyclerView.ViewHolder {
-    @BindView(R.id.text_timeline_date) TextView mDate;
-    @BindView(R.id.text_timeline_title) TextView mMessage;
-    @BindView(R.id.time_marker) TimelineView mTimelineView;
-    @BindView(R.id.text_timeline_desc) TextView mTimelineDesc;
+    @BindView(R.id.text_timeline_date) public TextView mDate;
+    @BindView(R.id.text_timeline_title) public TextView mMessage;
+    @BindView(R.id.time_marker) public TimelineView mTimelineView;
+    @BindView(R.id.text_timeline_desc) public TextView mTimelineDesc;
 
     public TimeLineViewHolder(View itemView, int viewType) {
         super(itemView);

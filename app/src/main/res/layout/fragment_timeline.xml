@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.whartonsummit.android_app.pwcs_android.TimelineFragment">
+    tools:context="com.whartonsummit.android_app.pwcs_android.Fragments.TimelineFragment">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerView"

@@ -1,4 +1,4 @@
-package com.whartonsummit.android_app.pwcs_android;
+package com.whartonsummit.android_app.pwcs_android.Activities;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -10,29 +10,33 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.MenuItem;
 import android.support.v7.widget.Toolbar;
-import android.widget.Toast;
+import android.view.MenuItem;
 
 import com.ogaclejapan.smarttablayout.SmartTabLayout;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItemAdapter;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems;
+import com.whartonsummit.android_app.pwcs_android.R;
+import com.whartonsummit.android_app.pwcs_android.Fragments.TestBlankFragment;
 
-public class MainActivity extends AppCompatActivity implements TestBlankFragment.OnFragmentInteractionListener {
+public class SpeakersActivity extends AppCompatActivity implements TestBlankFragment.OnFragmentInteractionListener {
 
     private DrawerLayout mDrawerLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        setTitle("PWCS · Agenda");
+        setContentView(R.layout.activity_speakers);
+        setTitle("PWCS · Speakers");
         mDrawerLayout = (DrawerLayout) findViewById(R.id.navigation_drawer);
         FragmentPagerItemAdapter myAdapter = new FragmentPagerItemAdapter(
                 getSupportFragmentManager(), FragmentPagerItems.with(this)
-                .add("Panels", TestBlankFragment.class)
-                .add("Events", TestBlankFragment.class)
+                .add("Finance", TestBlankFragment.class)
+                .add("International Relations", TestBlankFragment.class)
+                .add("Technology", TestBlankFragment.class)
+                .add("Social Responsibility", TestBlankFragment.class)
+                .add("Fashion", TestBlankFragment.class)
+                .add("Real Estate", TestBlankFragment.class)
                 .create());
 
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
@@ -48,7 +52,7 @@ public class MainActivity extends AppCompatActivity implements TestBlankFragment
         actionbar.setHomeAsUpIndicator(R.drawable.ic_menu);
 
         NavigationView navigationView = findViewById(R.id.nav_view);
-        navigationView.setCheckedItem(R.id.nav_agenda);
+        navigationView.setCheckedItem(R.id.nav_speakers);
         navigationView.setNavigationItemSelectedListener(
                 new NavigationView.OnNavigationItemSelectedListener() {
                     @Override
@@ -57,21 +61,18 @@ public class MainActivity extends AppCompatActivity implements TestBlankFragment
                         menuItem.setChecked(true);
                         // close drawer when item is tapped
                         mDrawerLayout.closeDrawers();
-
-                        // !important! smooth animation:
-                        Bundle bundle = ActivityOptionsCompat.makeCustomAnimation(MainActivity.this,
+                        Bundle bundle = ActivityOptionsCompat.makeCustomAnimation(SpeakersActivity.this,
                                 android.R.anim.fade_in, android.R.anim.fade_out).toBundle();
-
-                        // navigation choices:
+                        // choices:
                         switch (menuItem.getItemId()) {
-                            case R.id.nav_speakers:
-                                startActivity(new Intent(MainActivity.this, SpeakersActivity.class), bundle);
-                                break;
                             case R.id.nav_more:
-                                startActivity(new Intent(MainActivity.this, MoreActivity.class), bundle);
+                                startActivity(new Intent(SpeakersActivity.this, MoreActivity.class),bundle);
+                                break;
+                            case R.id.nav_agenda:
+                                startActivity(new Intent(SpeakersActivity.this, MainActivity.class),bundle);
                                 break;
                             case R.id.nav_schedule:
-                                startActivity(new Intent(MainActivity.this, ScheduleActivity.class),bundle);
+                                startActivity(new Intent(SpeakersActivity.this, ScheduleActivity.class),bundle);
                                 break;
                             default:
                                 break;
