@@ -4,10 +4,12 @@
     android:layout_height="match_parent"
     tools:context="com.whartonsummit.android_app.pwcs_android.Fragments.FaqFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ExpandableListView
+        android:id="@+id/faq_table"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
+
+
+    </ExpandableListView>
 
 </FrameLayout>
