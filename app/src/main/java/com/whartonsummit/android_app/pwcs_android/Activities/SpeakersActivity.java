@@ -16,6 +16,7 @@ import android.view.MenuItem;
 import com.ogaclejapan.smarttablayout.SmartTabLayout;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItemAdapter;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems;
+import com.whartonsummit.android_app.pwcs_android.Fragments.SpeakersFragment;
 import com.whartonsummit.android_app.pwcs_android.R;
 import com.whartonsummit.android_app.pwcs_android.Fragments.TestBlankFragment;
 
@@ -31,7 +32,7 @@ public class SpeakersActivity extends AppCompatActivity implements TestBlankFrag
         mDrawerLayout = (DrawerLayout) findViewById(R.id.navigation_drawer);
         FragmentPagerItemAdapter myAdapter = new FragmentPagerItemAdapter(
                 getSupportFragmentManager(), FragmentPagerItems.with(this)
-                .add("Finance", TestBlankFragment.class)
+                .add("Finance", SpeakersFragment.class)
                 .add("International Relations", TestBlankFragment.class)
                 .add("Technology", TestBlankFragment.class)
                 .add("Social Responsibility", TestBlankFragment.class)
