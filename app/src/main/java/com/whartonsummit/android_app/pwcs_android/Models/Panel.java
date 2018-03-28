@@ -1,10 +1,12 @@
 package com.whartonsummit.android_app.pwcs_android.Models;
 
+import java.io.Serializable;
+
 /**
  * Created by zhileizheng on 3/25/18.
  */
 
-public class Panel {
+public class Panel implements Serializable {
     private String name;
     private int imageResource;
     private String subTitle;
