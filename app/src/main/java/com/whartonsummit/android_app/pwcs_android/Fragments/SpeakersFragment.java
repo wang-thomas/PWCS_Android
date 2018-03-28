@@ -31,9 +31,19 @@ public class SpeakersFragment extends android.support.v4.app.Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_speakers, container, false);
+
+        // setUpRecyclerView
         speakersRecycleView = (RecyclerView) rootView.findViewById(R.id.recyclerView);
         gridLayoutManager = new GridLayoutManager(getContext(), 2);
         speakersRecycleView.setLayoutManager(gridLayoutManager);
+
+        // set Adapters
+        mAdapter = new SpeakerListAdapter(getSpeakerData());
+        speakersRecycleView.setAdapter(mAdapter);
+        return rootView;
+    }
+
+    private List<Speaker> getSpeakerData() {
         List<Speaker> speakerData = new ArrayList<Speaker>();
         speakerData.add(new Speaker("Kevin Rudd", "temp", "Former Premier of Australia", "He is handsome"));
         speakerData.add(new Speaker("John Stuart", "temp", "Former Premier of Australia", "He is handsome"));
@@ -41,8 +51,6 @@ public class SpeakersFragment extends android.support.v4.app.Fragment {
         speakerData.add(new Speaker("John Oliver", "temp", "Former Premier of Australia", "He is handsome"));
         speakerData.add(new Speaker("Rajiv Ghandi", "temp", "Former Premier of Australia", "He is handsome"));
         speakerData.add(new Speaker("Superman", "temp", "Former Premier of Australia", "He is handsome"));
-        mAdapter = new SpeakerListAdapter(speakerData);
-        speakersRecycleView.setAdapter(mAdapter);
-        return rootView;
+        return speakerData;
     }
 }

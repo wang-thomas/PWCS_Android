@@ -16,6 +16,7 @@ import android.support.v7.widget.Toolbar;
 import com.ogaclejapan.smarttablayout.SmartTabLayout;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItemAdapter;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems;
+import com.whartonsummit.android_app.pwcs_android.Fragments.PanelsFragment;
 import com.whartonsummit.android_app.pwcs_android.R;
 import com.whartonsummit.android_app.pwcs_android.Fragments.TestBlankFragment;
 
@@ -31,7 +32,7 @@ public class MainActivity extends AppCompatActivity implements TestBlankFragment
         mDrawerLayout = (DrawerLayout) findViewById(R.id.navigation_drawer);
         FragmentPagerItemAdapter myAdapter = new FragmentPagerItemAdapter(
                 getSupportFragmentManager(), FragmentPagerItems.with(this)
-                .add("Panels", TestBlankFragment.class)
+                .add("Panels", PanelsFragment.class)
                 .add("Events", TestBlankFragment.class)
                 .create());
 
