@@ -18,6 +18,10 @@ android {
     }
 }
 
+repositories {
+    mavenCentral()
+}
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.android.support:appcompat-v7:26.1.0'
@@ -41,4 +45,5 @@ dependencies {
     compile 'de.hdodenhof:circleimageview:2.2.0'
     compile 'com.makeramen:roundedimageview:2.3.0'
 
+    implementation 'com.mapbox.mapboxsdk:mapbox-android-sdk:5.5.1'
 }

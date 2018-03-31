@@ -7,8 +7,11 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.Toast;
 
 import com.whartonsummit.android_app.pwcs_android.R;
+import com.whartonsummit.android_app.pwcs_android.Services.DataService;
 
 
 /**
@@ -60,13 +63,21 @@ public class TestBlankFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_test_blank, container, false);
+        View base = inflater.inflate(R.layout.fragment_test_blank, container, false);
+        Button button = base.findViewById(R.id.button);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+        return base;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
