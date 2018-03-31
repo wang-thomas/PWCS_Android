@@ -27,40 +27,58 @@
         app:cardElevation="1dp"
         app:contentPadding="15dp">
 
-        <LinearLayout
+        <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:orientation="vertical">
 
             <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/text_timeline_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/text_timeline_date"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="14dp"
-                tools:text="8AM - 9AM"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="8AM - 9AM" />
 
             <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/text_timeline_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:id="@+id/text_timeline_title"
                 android:textColor="@android:color/black"
                 android:textSize="18dp"
-                tools:text="Finance Panel"/>
+                android:textStyle="bold"
+                android:letterSpacing="1dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_timeline_date"
+                tools:text="Finance Panel" />
 
             <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/text_timeline_desc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:id="@+id/text_timeline_desc"
                 android:textAlignment="viewStart"
                 android:textColor="@android:color/darker_gray"
                 android:textSize="12dp"
-                tools:text="Your RecyclerViewHolder should have an extra paramenter in constructor i.e viewType from onCreateViewHolder. You would also have to call the method initLine(viewType) in constructor definition."/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_timeline_title"
+                tools:text="Your RecyclerViewHolder should have an extra paramenter in constructor i.e viewType from onCreateViewHolder. You would also have to call the method initLine(viewType) in constructor definition." />
 
-        </LinearLayout>
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="14dp"
+                android:text="\@ Annenburg Center"
+                app:layout_constraintStart_toEndOf="@+id/text_timeline_date"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
 
     </android.support.v7.widget.CardView>
 

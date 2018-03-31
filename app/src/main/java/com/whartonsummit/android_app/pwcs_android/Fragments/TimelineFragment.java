@@ -9,8 +9,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.whartonsummit.android_app.pwcs_android.Models.TimelineObj;
 import com.whartonsummit.android_app.pwcs_android.R;
 import com.whartonsummit.android_app.pwcs_android.Adapters.TimeLineAdapter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class TimelineFragment extends Fragment {
@@ -50,5 +54,11 @@ public class TimelineFragment extends Fragment {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         public void onTimelineFragmentInteraction(Uri uri);
+    }
+
+    private List<TimelineObj> prepareData() {
+        List<TimelineObj> list = new ArrayList<TimelineObj>();
+        list.add(new TimelineObj("Finance Panel", "8AM - 9AM", "Annenburg Center", ""));
+        return list;
     }
 }
