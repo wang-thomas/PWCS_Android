@@ -38,14 +38,15 @@ public class DataService {
         day1.add(new TimelineObj("Finance Panel", "8AM - 9AM", "Annenburg Center", "Hello World"));
         day1.add(new TimelineObj("Finance Panel", "8AM - 9AM", "Annenburg Center", "Hello World"));
         List<TimelineObj> day2 = new ArrayList<>();
-        day2.add(new TimelineObj("Finance Panel", "8AM - 9AM", "Annenburg Center", "Hello World"));
+        day2.add(new TimelineObj("Technology Panel", "8AM - 9AM", "Annenburg Center", "Hello World"));
         List<TimelineObj> day3 = new ArrayList<>();
+        day3.add(new TimelineObj("Closing Panel", "8AM - 9AM", "Annenburg Center", "Hello World"));
         timelines.put(1, day1);
         timelines.put(2, day2);
         timelines.put(3, day3);
     }
 
-    
+
 
 
 

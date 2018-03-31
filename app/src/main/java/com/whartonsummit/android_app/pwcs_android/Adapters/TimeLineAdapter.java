@@ -9,7 +9,10 @@ import android.content.Context;
 import android.widget.TextView;
 
 import com.github.vipulasri.timelineview.TimelineView;
+import com.whartonsummit.android_app.pwcs_android.Models.TimelineObj;
 import com.whartonsummit.android_app.pwcs_android.R;
+
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -21,6 +24,8 @@ import butterknife.ButterKnife;
 public class TimeLineAdapter extends RecyclerView.Adapter<TimeLineAdapter.TimeLineViewHolder>  {
     private Context mContext;
     private LayoutInflater mLayoutInflater;
+
+    private List<TimelineObj> events;
 
 
     @Override
@@ -34,24 +39,31 @@ public class TimeLineAdapter extends RecyclerView.Adapter<TimeLineAdapter.TimeLi
         return new TimeLineViewHolder(view, viewType);
     }
 
+    public TimeLineAdapter(List<TimelineObj> events) {
+        this.events = events;
+    }
+
     @Override
     public void onBindViewHolder(TimeLineViewHolder holder, int position) {
-        holder.mDate.setVisibility(View.VISIBLE);
-        holder.mDate.setText("Finance Panel");
-        holder.mMessage.setText("This is awesome");
-        holder.mTimelineDesc.setText("Your RecyclerViewHolder should have an extra paramenter in constructor i.e viewType from onCreateViewHolder. You would also have to call the method initLine(viewType) in constructor definition.");
+        TimelineObj obj = events.get(position);
+        holder.time.setVisibility(View.VISIBLE);
+        holder.time.setText(obj.getTime());
+        holder.title.setText(obj.getTitle());
+        holder.desc.setText(obj.getDesc());
+        holder.location.setText(obj.getLocation());
     }
 
     @Override
     public int getItemCount() {
-        return 2;
+        return events.size();
     }
 
     public class TimeLineViewHolder extends RecyclerView.ViewHolder {
-        @BindView(R.id.text_timeline_date) public TextView mDate;
-        @BindView(R.id.text_timeline_title) public TextView mMessage;
+        @BindView(R.id.text_timeline_date) public TextView time;
+        @BindView(R.id.text_timeline_title) public TextView title;
         @BindView(R.id.time_marker) public TimelineView mTimelineView;
-        @BindView(R.id.text_timeline_desc) public TextView mTimelineDesc;
+        @BindView(R.id.text_timeline_desc) public TextView desc;
+        @BindView(R.id.text_timeline_location) public TextView location;
 
         public TimeLineViewHolder(View itemView, int viewType) {
             super(itemView);

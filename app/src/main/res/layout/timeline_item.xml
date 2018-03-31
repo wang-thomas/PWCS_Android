@@ -50,7 +50,6 @@
                 android:textColor="@android:color/black"
                 android:textSize="18dp"
                 android:textStyle="bold"
-                android:letterSpacing="1dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/text_timeline_date"
                 tools:text="Finance Panel" />
@@ -68,7 +67,7 @@
                 tools:text="Your RecyclerViewHolder should have an extra paramenter in constructor i.e viewType from onCreateViewHolder. You would also have to call the method initLine(viewType) in constructor definition." />
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/text_timeline_location"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"

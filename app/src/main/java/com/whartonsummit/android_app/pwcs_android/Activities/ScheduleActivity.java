@@ -17,10 +17,13 @@ import com.ogaclejapan.smarttablayout.SmartTabLayout;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItemAdapter;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems;
 import com.whartonsummit.android_app.pwcs_android.Fragments.TestBlankFragment;
-import com.whartonsummit.android_app.pwcs_android.Fragments.TimelineFragment;
+import com.whartonsummit.android_app.pwcs_android.Fragments.Timelines.Day1Fragment;
+import com.whartonsummit.android_app.pwcs_android.Fragments.Timelines.Day2Fragment;
+import com.whartonsummit.android_app.pwcs_android.Fragments.Timelines.Day3Fragment;
+import com.whartonsummit.android_app.pwcs_android.Fragments.Timelines.TimelineFragment;
 import com.whartonsummit.android_app.pwcs_android.R;
 
-public class ScheduleActivity extends AppCompatActivity implements TestBlankFragment.OnFragmentInteractionListener, TimelineFragment.OnFragmentInteractionListener {
+public class ScheduleActivity extends AppCompatActivity {
 
     private DrawerLayout mDrawerLayout;
 
@@ -33,9 +36,9 @@ public class ScheduleActivity extends AppCompatActivity implements TestBlankFrag
         FragmentPagerItemAdapter myAdapter;
         myAdapter = new FragmentPagerItemAdapter(
                 getSupportFragmentManager(), FragmentPagerItems.with(this)
-                .add("Friday 13th", TimelineFragment.class)
-                .add("Saturday 14th", TimelineFragment.class)
-                .add("Sunday 15th", TimelineFragment.class)
+                .add("Friday 13th", Day1Fragment.class)
+                .add("Saturday 14th", Day2Fragment.class)
+                .add("Sunday 15th", Day3Fragment.class)
                 .create());
 
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
@@ -80,16 +83,6 @@ public class ScheduleActivity extends AppCompatActivity implements TestBlankFrag
                         return true;
                     }
                 });
-    }
-
-    @Override
-    public void onTestFragmentInteraction(Uri string) {
-
-    }
-
-    @Override
-    public void onTimelineFragmentInteraction(Uri uri) {
-
     }
 
     @Override
