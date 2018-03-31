@@ -1,20 +1,24 @@
 package com.whartonsummit.android_app.pwcs_android.Models;
 
+import java.io.Serializable;
+
 /**
  * Created by zhileizheng on 3/25/18.
  */
 
-public class Speaker {
+public class Speaker implements Serializable{
     private String name;
     private String imageUrl;
     private String title;
     private String desc;
+    private int imageResource;
 
-    public Speaker (String name, String imageUrl, String title, String desc) {
+    public Speaker (String name, String imageUrl, String title, String desc, int imageResource) {
         this.name = name;
         this.imageUrl = imageUrl;
         this.title = title;
         this.desc = desc;
+        this.imageResource = imageResource;
     }
 
     public void setDesc(String desc) {
@@ -47,5 +51,9 @@ public class Speaker {
 
     public String getTitle() {
         return title;
+    }
+
+    public int getImageResource() {
+        return imageResource;
     }
 }

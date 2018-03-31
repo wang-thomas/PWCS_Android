@@ -1,5 +1,8 @@
 package com.whartonsummit.android_app.pwcs_android.Adapters;
 
+import android.content.Context;
+import android.content.Intent;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +11,9 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.whartonsummit.android_app.pwcs_android.Activities.PanelDetailsActivity;
+import com.whartonsummit.android_app.pwcs_android.Activities.SpeakerDetailsActivity;
+import com.whartonsummit.android_app.pwcs_android.Models.Panel;
 import com.whartonsummit.android_app.pwcs_android.Models.Speaker;
 import com.whartonsummit.android_app.pwcs_android.R;
 
@@ -39,10 +45,23 @@ public class SpeakerListAdapter extends RecyclerView.Adapter<SpeakerListAdapter.
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
-        Speaker speaker = data.get(position);
+    public void onBindViewHolder(final ViewHolder holder, int position) {
+        final Speaker speaker = data.get(position);
         holder.title.setText(speaker.getName());
-        holder.imageView.setImageResource(R.drawable.speaker_kevin_rudd);
+        holder.imageView.setImageResource(speaker.getImageResource());
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = goToSpeaker(speaker, holder.title.getContext());
+                holder.title.getContext().startActivity(intent);
+            }
+        });
+    }
+
+    private Intent goToSpeaker(Speaker speaker, Context context){
+        Intent intent= new Intent(context, SpeakerDetailsActivity.class);
+        intent.putExtra("speaker", speaker);
+        return intent;
     }
 
     @Override
@@ -54,6 +73,7 @@ public class SpeakerListAdapter extends RecyclerView.Adapter<SpeakerListAdapter.
 
         @BindView(R.id.info_text) TextView title;
         @BindView(R.id.imageView) ImageView imageView;
+        @BindView(R.id.card_view) CardView cardView;
 
         public ViewHolder(View v) {
             super(v);

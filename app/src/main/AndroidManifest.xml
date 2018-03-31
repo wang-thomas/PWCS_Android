@@ -22,7 +22,8 @@
         <activity android:name=".Activities.SpeakersActivity" />
         <activity android:name=".Activities.MoreActivity" />
         <activity android:name=".Activities.MainActivity" />
-        <activity android:name=".Activities.PanelDetailsActivity"></activity>
+        <activity android:name=".Activities.PanelDetailsActivity" />
+        <activity android:name=".Activities.SpeakerDetailsActivity"></activity>
     </application>
 
 </manifest>
