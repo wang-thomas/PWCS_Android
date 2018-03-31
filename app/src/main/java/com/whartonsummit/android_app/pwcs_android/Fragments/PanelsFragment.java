@@ -15,6 +15,7 @@ import com.whartonsummit.android_app.pwcs_android.Adapters.PanelsListAdapter;
 import com.whartonsummit.android_app.pwcs_android.Adapters.SpeakerListAdapter;
 import com.whartonsummit.android_app.pwcs_android.Models.Panel;
 import com.whartonsummit.android_app.pwcs_android.R;
+import com.whartonsummit.android_app.pwcs_android.Services.DataService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,13 +48,6 @@ public class PanelsFragment extends Fragment {
     }
 
     private List<Panel> getPanelsData() {
-        List<Panel> panels = new ArrayList<Panel>();
-        panels.add(new Panel("Finance Panel", R.drawable.panel_bg_1,
-                "Make America Great Again", "9:00AM - 11:00AM",
-                "Annenburg Center", "This is an awesome panel."));
-        panels.add(new Panel("Technology Panel", R.drawable.panel_bg_2,
-                "Make America Tech Again", "1:00PM - 3:00PM",
-                "Annenburg Center", "This is an awesome panel."));
-        return panels;
+        return DataService.getInstance().getPanels();
     }
 }

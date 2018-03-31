@@ -15,14 +15,14 @@
         android:layout_height="200dp"
         card_view:cardElevation="3dp"
         card_view:cardUseCompatPadding="true"
-        android:background="@drawable/panel_bg_1"
+        android:background="@drawable/panel_bg_chicago"
         card_view:cardCornerRadius="4dp"
         android:clipChildren="true">
 
         <com.makeramen.roundedimageview.RoundedImageView
             xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/background_image"
-            android:src="@drawable/panel_bg_1"
+            android:src="@drawable/panel_bg_chicago"
             android:scaleType="fitXY"
             app:riv_corner_radius="4dp"
             android:layout_height="match_parent"

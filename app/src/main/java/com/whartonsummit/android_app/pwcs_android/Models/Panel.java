@@ -11,10 +11,10 @@ public class Panel implements Serializable {
     private int imageResource;
     private String subTitle;
     private String time;
-    private String location;
+    private Location location;
     private String desc;
 
-    public Panel (String name, int imageResource, String subTitle, String time, String location, String desc) {
+    public Panel (String name, int imageResource, String subTitle, String time, Location location, String desc) {
         this.name = name;
         this.imageResource = imageResource;
         this.subTitle = subTitle;
@@ -39,7 +39,7 @@ public class Panel implements Serializable {
         return subTitle;
     }
 
-    public String getLocation() {
+    public Location getLocation() {
         return location;
     }
 
@@ -57,10 +57,6 @@ public class Panel implements Serializable {
 
     public void setImageResource(int imageResource) {
         this.imageResource = imageResource;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
     }
 
     public void setSubTitle(String subTitle) {

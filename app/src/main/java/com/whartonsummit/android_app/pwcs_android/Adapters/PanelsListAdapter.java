@@ -40,13 +40,11 @@ public class PanelsListAdapter extends RecyclerView.Adapter<PanelsListAdapter.Vi
         return new PanelsListAdapter.ViewHolder(v);
     }
 
-
-
     @Override
     public void onBindViewHolder(final PanelsListAdapter.ViewHolder holder, int position) {
         final Panel panel = data.get(position);
         holder.title.setText(panel.getName());
-        holder.location.setText(panel.getLocation());
+        holder.location.setText(panel.getLocation().toString());
         holder.time.setText(panel.getTime());
         holder.imageView.setImageResource(panel.getImageResource());
         holder.cardView.setOnClickListener(new View.OnClickListener() {

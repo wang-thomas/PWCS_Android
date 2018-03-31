@@ -1,5 +1,6 @@
 package com.whartonsummit.android_app.pwcs_android.Activities;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
@@ -11,6 +12,7 @@ import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.webkit.WebView;
+import android.widget.TextView;
 
 import com.mapbox.mapboxsdk.Mapbox;
 import com.mapbox.mapboxsdk.annotations.Icon;
@@ -20,46 +22,60 @@ import com.mapbox.mapboxsdk.geometry.LatLng;
 import com.mapbox.mapboxsdk.maps.MapView;
 import com.mapbox.mapboxsdk.maps.MapboxMap;
 import com.mapbox.mapboxsdk.maps.OnMapReadyCallback;
+import com.whartonsummit.android_app.pwcs_android.Models.Location;
+import com.whartonsummit.android_app.pwcs_android.Models.Panel;
 import com.whartonsummit.android_app.pwcs_android.R;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class PanelDetailsActivity extends AppCompatActivity {
 
-    private MapView mapView;
-    private CardView card;
+    private Panel panel;
 
-    private WebView webView;
+    @BindView(R.id.webView1) WebView webView;
+    @BindView(R.id.mapView) MapView mapView;
+    @BindView(R.id.title_info) TextView panelTitle;
+    @BindView(R.id.time_info) TextView timeInfo;
+    @BindView(R.id.location_info) TextView locationInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_panel_details);
-        setTitle("Finance Panel");
+        ButterKnife.bind(this);
 
+        Intent intent = getIntent();
+        panel = (Panel) intent.getSerializableExtra("panel");
+
+        setUpToolbar();
+        setUpView();
+
+        Mapbox.getInstance(this, "pk.eyJ1IjoidG9teiIsImEiOiJjajJyN3dyenkwMDVqMndzN3Y0cjk0bTRmIn0.FEEGdubneAr17N9f8ZHh5g");
+        mapView.onCreate(savedInstanceState);
+        setUpMapView();
+    }
+
+    private void setUpToolbar() {
+        setTitle(panel.getName());
         Toolbar toolbar = findViewById(R.id.app_toolbar);
         setSupportActionBar(toolbar);
         ActionBar actionbar = getSupportActionBar();
         actionbar.setDisplayHomeAsUpEnabled(true);
         actionbar.setHomeAsUpIndicator(R.drawable.ic_arrow_back_black);
+    }
 
+    private void setUpView() {
+        timeInfo.setText(panel.getTime());
+        panelTitle.setText(panel.getName());
+        locationInfo.setText(panel.getLocation().toString());
         String htmlText = "<html><body style=\"text-align:justify; font-size: 14px\"> %s </body></Html>";
-        String myData = "The 2018 Penn Wharton China Summit will be held on April 13th-15th, " +
-                "2018 at the University of Pennsylvania. Hosted by the China Summit Foundation and the Penn Wharton China Center, " +
-                "and further supported by the Chinese embassy and the government of Pennsylvania, PWCS is committed to build an " +
-                "influential platform that promotes communications between the two countries and establish connections among " +
-                "students oversea in the United States. With over 1500 attendees coming from 4 countries, 34 States and over 70 Cities, " +
-                "the inaugural PWCS in April 2016 has already become the largest student organized summit in the United States. " +
-                "2018 is an important year for the development of US-China relationship. We hope to strengthen the communication and " +
-                "facilitate cooperation between top students, professionals and corporations from both countries, and contribute " +
-                "to the long-lasting friendship between the United States and China.";
-        card = (CardView) findViewById(R.id.card_view);
-
-        webView = (WebView) findViewById(R.id.webView1);
+        String myData = panel.getDesc();
         webView.loadData(String.format(htmlText, myData), "text/html", "utf-8");
-        Mapbox.getInstance(this, "pk.eyJ1IjoidG9teiIsImEiOiJjajJyN3dyenkwMDVqMndzN3Y0cjk0bTRmIn0.FEEGdubneAr17N9f8ZHh5g");
+    }
 
-
-        mapView = (MapView) findViewById(R.id.mapView);
-        mapView.onCreate(savedInstanceState);
+    private void setUpMapView() {
+        final Location location = panel.getLocation();
         mapView.getMapAsync(new OnMapReadyCallback() {
             @Override
             public void onMapReady(MapboxMap mapboxMap) {
@@ -67,20 +83,14 @@ public class PanelDetailsActivity extends AppCompatActivity {
                 Drawable image = ContextCompat.getDrawable(PanelDetailsActivity.this, R.drawable.map_marker_icon);
                 Icon icon = iconFactory.fromBitmap(resize(image));
                 mapboxMap.addMarker(new MarkerOptions()
-                        .position(new LatLng(39.9528219,-75.196286))
-                        .title("Annenburg Center")
+                        .position(new LatLng(location.toLatLng()[0], location.toLatLng()[1]))
+                        .title(location.toString())
                         .snippet("UPenn")
                         .icon(icon)
                 );
             }
         });
     }
-
-//    private void setHeightForCard(String str) {
-//        android.view.ViewGroup.LayoutParams params = card.getLayoutParams();
-//        params.height = 600;
-//        card.setLayoutParams(params);
-//    }
 
     private Bitmap resize(Drawable image) {
         Bitmap b = ((BitmapDrawable)image).getBitmap();

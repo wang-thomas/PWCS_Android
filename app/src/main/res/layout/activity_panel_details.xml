@@ -39,7 +39,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:background="@drawable/panel_bg_1"
+                android:background="@drawable/panel_bg_shanghai"
                 android:clipChildren="true"
                 card_view:cardCornerRadius="4dp"
                 card_view:cardElevation="3dp"
@@ -55,7 +55,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="200dp"
                         android:scaleType="fitXY"
-                        android:src="@drawable/panel_bg_1"
+                        android:src="@drawable/panel_bg_la"
                         app:riv_corner_radius="0dp"/>
 
                     <TextView
