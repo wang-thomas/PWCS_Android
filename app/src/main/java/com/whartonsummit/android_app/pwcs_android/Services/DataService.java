@@ -20,10 +20,12 @@ public class DataService {
 
     HashMap<Integer, List<TimelineObj>> timelines;
     List<Panel> panels;
+    HashMap<String, List<Speaker>> speakers;
 
     private DataService() {
         populateTimeline();
         populatePanels();
+        populateSpeakers();
     }
 
     public static DataService getInstance() {
@@ -142,11 +144,125 @@ public class DataService {
     * */
 
     public List<Speaker> getSpeakerForPanel(String panelName) {
-        return null;
+        return speakers.get(panelName);
     }
 
     public void populateSpeakers() {
-
+        speakers = new HashMap<>();
+        List<Speaker> openingSpeakers = new ArrayList<>();
+        // TODO: opening speakers:
+        openingSpeakers.add(new Speaker("Kevin Rudd", "", "Former Premier of Australia", "The 2018 Penn Wharton China Summit will be held on April 13th-15th, " +
+                "2018 at the University of Pennsylvania. Hosted by the China Summit Foundation and the Penn Wharton China Center, " +
+                "and further supported by the Chinese embassy and the government of Pennsylvania, PWCS is committed to build an " +
+                "influential platform that promotes communications between the two countries and establish connections among " +
+                "students oversea in the United States. With over 1500 attendees coming from 4 countries, 34 States and over 70 Cities, " +
+                "the inaugural PWCS in April 2016 has already become the largest student organized summit in the United States. " +
+                "2018 is an important year for the development of US-China relationship. We hope to strengthen the communication and " +
+                "facilitate cooperation between top students, professionals and corporations from both countries, and contribute " +
+                "to the long-lasting friendship between the United States and China.", R.drawable.speaker_kevin_rudd));
+        openingSpeakers.add(new Speaker("Fu Ying", "", "China Foreign Minister", "The 2018 Penn Wharton China Summit will be held on April 13th-15th, " +
+                "2018 at the University of Pennsylvania. Hosted by the China Summit Foundation and the Penn Wharton China Center, " +
+                "and further supported by the Chinese embassy and the government of Pennsylvania, PWCS is committed to build an " +
+                "influential platform that promotes communications between the two countries and establish connections among " +
+                "students oversea in the United States. With over 1500 attendees coming from 4 countries, 34 States and over 70 Cities, " +
+                "the inaugural PWCS in April 2016 has already become the largest student organized summit in the United States. " +
+                "2018 is an important year for the development of US-China relationship. We hope to strengthen the communication and " +
+                "facilitate cooperation between top students, professionals and corporations from both countries, and contribute " +
+                "to the long-lasting friendship between the United States and China.", R.drawable.speaker_fu_ying));
+        openingSpeakers.add(new Speaker("Su Mang", "", "CEO of BaSha", "The 2018 Penn Wharton China Summit will be held on April 13th-15th, " +
+                "2018 at the University of Pennsylvania. Hosted by the China Summit Foundation and the Penn Wharton China Center, " +
+                "and further supported by the Chinese embassy and the government of Pennsylvania, PWCS is committed to build an " +
+                "influential platform that promotes communications between the two countries and establish connections among " +
+                "students oversea in the United States. With over 1500 attendees coming from 4 countries, 34 States and over 70 Cities, " +
+                "the inaugural PWCS in April 2016 has already become the largest student organized summit in the United States. " +
+                "2018 is an important year for the development of US-China relationship. We hope to strengthen the communication and " +
+                "facilitate cooperation between top students, professionals and corporations from both countries, and contribute " +
+                "to the long-lasting friendship between the United States and China.", R.drawable.speaker_su_mang));
+        List<Speaker> closingSpeakers = new ArrayList<>();
+        // TODO: closing speakers:
+        closingSpeakers.add(new Speaker("Fu Ying", "", "China Foreign Minister", "The 2018 Penn Wharton China Summit will be held on April 13th-15th, " +
+                "2018 at the University of Pennsylvania. Hosted by the China Summit Foundation and the Penn Wharton China Center, " +
+                "and further supported by the Chinese embassy and the government of Pennsylvania, PWCS is committed to build an " +
+                "influential platform that promotes communications between the two countries and establish connections among " +
+                "students oversea in the United States. With over 1500 attendees coming from 4 countries, 34 States and over 70 Cities, " +
+                "the inaugural PWCS in April 2016 has already become the largest student organized summit in the United States. " +
+                "2018 is an important year for the development of US-China relationship. We hope to strengthen the communication and " +
+                "facilitate cooperation between top students, professionals and corporations from both countries, and contribute " +
+                "to the long-lasting friendship between the United States and China.", R.drawable.speaker_fu_ying));
+        List<Speaker> financeSpeakers = new ArrayList<>();
+        // TODO: closing speakers:
+        financeSpeakers.add(new Speaker("Ying Shulin", "", "CEO of Temp", "The 2018 Penn Wharton China Summit will be held on April 13th-15th, " +
+                "2018 at the University of Pennsylvania. Hosted by the China Summit Foundation and the Penn Wharton China Center, " +
+                "and further supported by the Chinese embassy and the government of Pennsylvania, PWCS is committed to build an " +
+                "influential platform that promotes communications between the two countries and establish connections among " +
+                "students oversea in the United States. With over 1500 attendees coming from 4 countries, 34 States and over 70 Cities, " +
+                "the inaugural PWCS in April 2016 has already become the largest student organized summit in the United States. " +
+                "2018 is an important year for the development of US-China relationship. We hope to strengthen the communication and " +
+                "facilitate cooperation between top students, professionals and corporations from both countries, and contribute " +
+                "to the long-lasting friendship between the United States and China.", R.drawable.speaker_ying_shu_lin));
+        List<Speaker> techSpeakers = new ArrayList<>();
+        // TODO: closing speakers:
+        techSpeakers.add(new Speaker("Kebin Dai", "", "CEO of Liepin", "The 2018 Penn Wharton China Summit will be held on April 13th-15th, " +
+                "2018 at the University of Pennsylvania. Hosted by the China Summit Foundation and the Penn Wharton China Center, " +
+                "and further supported by the Chinese embassy and the government of Pennsylvania, PWCS is committed to build an " +
+                "influential platform that promotes communications between the two countries and establish connections among " +
+                "students oversea in the United States. With over 1500 attendees coming from 4 countries, 34 States and over 70 Cities, " +
+                "the inaugural PWCS in April 2016 has already become the largest student organized summit in the United States. " +
+                "2018 is an important year for the development of US-China relationship. We hope to strengthen the communication and " +
+                "facilitate cooperation between top students, professionals and corporations from both countries, and contribute " +
+                "to the long-lasting friendship between the United States and China.", R.drawable.speaker_kebin_dai));
+        List<Speaker> irSpeakers = new ArrayList<>();
+        // TODO: closing speakers:
+        irSpeakers.add(new Speaker("Kevin Rudd", "", "Prime Minister of Australia", "The 2018 Penn Wharton China Summit will be held on April 13th-15th, " +
+                "2018 at the University of Pennsylvania. Hosted by the China Summit Foundation and the Penn Wharton China Center, " +
+                "and further supported by the Chinese embassy and the government of Pennsylvania, PWCS is committed to build an " +
+                "influential platform that promotes communications between the two countries and establish connections among " +
+                "students oversea in the United States. With over 1500 attendees coming from 4 countries, 34 States and over 70 Cities, " +
+                "the inaugural PWCS in April 2016 has already become the largest student organized summit in the United States. " +
+                "2018 is an important year for the development of US-China relationship. We hope to strengthen the communication and " +
+                "facilitate cooperation between top students, professionals and corporations from both countries, and contribute " +
+                "to the long-lasting friendship between the United States and China.", R.drawable.speaker_kevin_rudd));
+        List<Speaker> estateSpeakers = new ArrayList<>();
+        // TODO: closing speakers:
+        estateSpeakers.add(new Speaker("Fu Ying", "", "China Foreign Minister", "The 2018 Penn Wharton China Summit will be held on April 13th-15th, " +
+                "2018 at the University of Pennsylvania. Hosted by the China Summit Foundation and the Penn Wharton China Center, " +
+                "and further supported by the Chinese embassy and the government of Pennsylvania, PWCS is committed to build an " +
+                "influential platform that promotes communications between the two countries and establish connections among " +
+                "students oversea in the United States. With over 1500 attendees coming from 4 countries, 34 States and over 70 Cities, " +
+                "the inaugural PWCS in April 2016 has already become the largest student organized summit in the United States. " +
+                "2018 is an important year for the development of US-China relationship. We hope to strengthen the communication and " +
+                "facilitate cooperation between top students, professionals and corporations from both countries, and contribute " +
+                "to the long-lasting friendship between the United States and China.", R.drawable.speaker_fu_ying));
+        List<Speaker> socialSpeakers = new ArrayList<>();
+        // TODO: closing speakers:
+        socialSpeakers.add(new Speaker("Wang Xi", "", "CEO of Whatever", "The 2018 Penn Wharton China Summit will be held on April 13th-15th, " +
+                "2018 at the University of Pennsylvania. Hosted by the China Summit Foundation and the Penn Wharton China Center, " +
+                "and further supported by the Chinese embassy and the government of Pennsylvania, PWCS is committed to build an " +
+                "influential platform that promotes communications between the two countries and establish connections among " +
+                "students oversea in the United States. With over 1500 attendees coming from 4 countries, 34 States and over 70 Cities, " +
+                "the inaugural PWCS in April 2016 has already become the largest student organized summit in the United States. " +
+                "2018 is an important year for the development of US-China relationship. We hope to strengthen the communication and " +
+                "facilitate cooperation between top students, professionals and corporations from both countries, and contribute " +
+                "to the long-lasting friendship between the United States and China.", R.drawable.speaker_wang_xi));
+        List<Speaker> fashionSpeakers = new ArrayList<>();
+        // TODO: closing speakers:
+        fashionSpeakers.add(new Speaker("Su Mang", "", "CEO of Basha", "The 2018 Penn Wharton China Summit will be held on April 13th-15th, " +
+                "2018 at the University of Pennsylvania. Hosted by the China Summit Foundation and the Penn Wharton China Center, " +
+                "and further supported by the Chinese embassy and the government of Pennsylvania, PWCS is committed to build an " +
+                "influential platform that promotes communications between the two countries and establish connections among " +
+                "students oversea in the United States. With over 1500 attendees coming from 4 countries, 34 States and over 70 Cities, " +
+                "the inaugural PWCS in April 2016 has already become the largest student organized summit in the United States. " +
+                "2018 is an important year for the development of US-China relationship. We hope to strengthen the communication and " +
+                "facilitate cooperation between top students, professionals and corporations from both countries, and contribute " +
+                "to the long-lasting friendship between the United States and China.", R.drawable.speaker_su_mang));
+        speakers.put("opening", openingSpeakers);
+        speakers.put("closing", closingSpeakers);
+        speakers.put("technology", techSpeakers);
+        speakers.put("fashion", fashionSpeakers);
+        speakers.put("finance", financeSpeakers);
+        speakers.put("social", socialSpeakers);
+        speakers.put("estate", estateSpeakers);
+        speakers.put("ir", irSpeakers);
     }
 
 

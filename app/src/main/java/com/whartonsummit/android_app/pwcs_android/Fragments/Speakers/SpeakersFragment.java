@@ -1,4 +1,4 @@
-package com.whartonsummit.android_app.pwcs_android.Fragments;
+package com.whartonsummit.android_app.pwcs_android.Fragments.Speakers;
 
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;

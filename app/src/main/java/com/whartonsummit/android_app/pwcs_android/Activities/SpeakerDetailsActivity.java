@@ -37,6 +37,7 @@ public class SpeakerDetailsActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         Intent intent = getIntent();
         Speaker speaker = (Speaker) intent.getSerializableExtra("speaker");
+        this.setTitle(speaker.getName());
         setUpView(speaker);
     }
 

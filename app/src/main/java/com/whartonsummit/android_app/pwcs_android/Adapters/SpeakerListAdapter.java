@@ -47,7 +47,8 @@ public class SpeakerListAdapter extends RecyclerView.Adapter<SpeakerListAdapter.
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         final Speaker speaker = data.get(position);
-        holder.title.setText(speaker.getName());
+        holder.name.setText(speaker.getName());
+        holder.title.setText(speaker.getTitle());
         holder.imageView.setImageResource(speaker.getImageResource());
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,8 +72,9 @@ public class SpeakerListAdapter extends RecyclerView.Adapter<SpeakerListAdapter.
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
-        @BindView(R.id.info_text) TextView title;
-        @BindView(R.id.imageView) ImageView imageView;
+        @BindView(R.id.speaker_name) TextView name;
+        @BindView(R.id.speaker_title) TextView title;
+        @BindView(R.id.speaker_image) ImageView imageView;
         @BindView(R.id.card_view) CardView cardView;
 
         public ViewHolder(View v) {

@@ -16,7 +16,15 @@ import android.view.MenuItem;
 import com.ogaclejapan.smarttablayout.SmartTabLayout;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItemAdapter;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems;
-import com.whartonsummit.android_app.pwcs_android.Fragments.SpeakersFragment;
+import com.whartonsummit.android_app.pwcs_android.Fragments.Speakers.ClosingSpeakersFragment;
+import com.whartonsummit.android_app.pwcs_android.Fragments.Speakers.FashionSpeakersFragment;
+import com.whartonsummit.android_app.pwcs_android.Fragments.Speakers.FinanceSpeakersFragment;
+import com.whartonsummit.android_app.pwcs_android.Fragments.Speakers.IRSpeakersFragment;
+import com.whartonsummit.android_app.pwcs_android.Fragments.Speakers.OpeningSpeakersFragment;
+import com.whartonsummit.android_app.pwcs_android.Fragments.Speakers.RealEstatesSpeakersFragment;
+import com.whartonsummit.android_app.pwcs_android.Fragments.Speakers.SocialSpeakersFragment;
+import com.whartonsummit.android_app.pwcs_android.Fragments.Speakers.SpeakersFragment;
+import com.whartonsummit.android_app.pwcs_android.Fragments.Speakers.TechSpeakersFragment;
 import com.whartonsummit.android_app.pwcs_android.R;
 import com.whartonsummit.android_app.pwcs_android.Fragments.TestBlankFragment;
 
@@ -32,12 +40,14 @@ public class SpeakersActivity extends AppCompatActivity implements TestBlankFrag
         mDrawerLayout = (DrawerLayout) findViewById(R.id.navigation_drawer);
         FragmentPagerItemAdapter myAdapter = new FragmentPagerItemAdapter(
                 getSupportFragmentManager(), FragmentPagerItems.with(this)
-                .add("Finance", SpeakersFragment.class)
-                .add("International Relations", TestBlankFragment.class)
-                .add("Technology", TestBlankFragment.class)
-                .add("Social Responsibility", TestBlankFragment.class)
-                .add("Fashion", TestBlankFragment.class)
-                .add("Real Estate", TestBlankFragment.class)
+                .add("Opening Ceremony", OpeningSpeakersFragment.class)
+                .add("Finance", FinanceSpeakersFragment.class)
+                .add("International Relations", IRSpeakersFragment.class)
+                .add("Technology", TechSpeakersFragment.class)
+                .add("Social Responsibility", SocialSpeakersFragment.class)
+                .add("Fashion", FashionSpeakersFragment.class)
+                .add("Real Estate", RealEstatesSpeakersFragment.class)
+                .add("Closing Ceremony", ClosingSpeakersFragment.class)
                 .create());
 
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
