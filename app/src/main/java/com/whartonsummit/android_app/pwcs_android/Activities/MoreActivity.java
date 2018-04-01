@@ -61,20 +61,30 @@ public class MoreActivity extends AppCompatActivity implements TestBlankFragment
                         mDrawerLayout.closeDrawers();
                         Bundle bundle = ActivityOptionsCompat.makeCustomAnimation(MoreActivity.this,
                                 android.R.anim.fade_in, android.R.anim.fade_out).toBundle();
+
+                        Intent intent;
                         // choices:
                         switch (menuItem.getItemId()) {
                             case R.id.nav_speakers:
-                                startActivity(new Intent(MoreActivity.this, SpeakersActivity.class),bundle);
+                                intent = new Intent(MoreActivity.this, SpeakersActivity.class);
+                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                                startActivity(intent, bundle);
                                 break;
                             case R.id.nav_agenda:
-                                startActivity(new Intent(MoreActivity.this, MainActivity.class),bundle);
+                                intent = new Intent(MoreActivity.this, MainActivity.class);
+                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                                startActivity(intent, bundle);
                                 break;
                             case R.id.nav_schedule:
-                                startActivity(new Intent(MoreActivity.this, ScheduleActivity.class),bundle);
+                                intent = new Intent(MoreActivity.this, ScheduleActivity.class);
+                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                                startActivity(intent, bundle);
                                 break;
                             default:
                                 break;
                         }
+
+                        finish();
 
                         return true;
                     }

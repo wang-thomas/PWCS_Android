@@ -16,6 +16,7 @@ import android.support.v7.widget.Toolbar;
 import com.ogaclejapan.smarttablayout.SmartTabLayout;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItemAdapter;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems;
+import com.whartonsummit.android_app.pwcs_android.Fragments.EventsFragment;
 import com.whartonsummit.android_app.pwcs_android.Fragments.PanelsFragment;
 import com.whartonsummit.android_app.pwcs_android.R;
 import com.whartonsummit.android_app.pwcs_android.Fragments.TestBlankFragment;
@@ -33,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements TestBlankFragment
         FragmentPagerItemAdapter myAdapter = new FragmentPagerItemAdapter(
                 getSupportFragmentManager(), FragmentPagerItems.with(this)
                 .add("Panels", PanelsFragment.class)
-                .add("Events", TestBlankFragment.class)
+                .add("Events", EventsFragment.class)
                 .create());
 
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
@@ -62,21 +63,29 @@ public class MainActivity extends AppCompatActivity implements TestBlankFragment
                         // !important! smooth animation:
                         Bundle bundle = ActivityOptionsCompat.makeCustomAnimation(MainActivity.this,
                                 android.R.anim.fade_in, android.R.anim.fade_out).toBundle();
-
+                        Intent intent;
                         // navigation choices:
                         switch (menuItem.getItemId()) {
                             case R.id.nav_speakers:
-                                startActivity(new Intent(MainActivity.this, SpeakersActivity.class), bundle);
+                                intent = new Intent(MainActivity.this, SpeakersActivity.class);
+                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                                startActivity(intent, bundle);
                                 break;
                             case R.id.nav_more:
-                                startActivity(new Intent(MainActivity.this, MoreActivity.class), bundle);
+                                intent = new Intent(MainActivity.this, MoreActivity.class);
+                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                                startActivity(intent, bundle);
                                 break;
                             case R.id.nav_schedule:
-                                startActivity(new Intent(MainActivity.this, ScheduleActivity.class),bundle);
+                                intent = new Intent(MainActivity.this, ScheduleActivity.class);
+                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                                startActivity(intent,bundle);
                                 break;
                             default:
                                 break;
                         }
+
+                        finish();
 
                         return true;
                     }

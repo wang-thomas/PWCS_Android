@@ -44,7 +44,7 @@ public class PanelsListAdapter extends RecyclerView.Adapter<PanelsListAdapter.Vi
     public void onBindViewHolder(final PanelsListAdapter.ViewHolder holder, int position) {
         final Panel panel = data.get(position);
         holder.title.setText(panel.getName());
-        holder.location.setText(panel.getLocation().toString());
+//        holder.location.setText(panel.getLocation().toString());
         holder.time.setText(panel.getTime());
         holder.imageView.setImageResource(panel.getImageResource());
         holder.cardView.setOnClickListener(new View.OnClickListener() {
@@ -71,7 +71,7 @@ public class PanelsListAdapter extends RecyclerView.Adapter<PanelsListAdapter.Vi
 
         @BindView(R.id.title_info) TextView title;
         @BindView(R.id.background_image) ImageView imageView;
-        @BindView(R.id.location_info) TextView location;
+//        @BindView(R.id.location_info) TextView location;
         @BindView(R.id.time_info) TextView time;
         @BindView(R.id.card_view) CardView cardView;
 

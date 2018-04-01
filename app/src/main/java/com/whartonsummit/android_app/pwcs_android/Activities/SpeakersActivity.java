@@ -75,19 +75,28 @@ public class SpeakersActivity extends AppCompatActivity implements TestBlankFrag
                         Bundle bundle = ActivityOptionsCompat.makeCustomAnimation(SpeakersActivity.this,
                                 android.R.anim.fade_in, android.R.anim.fade_out).toBundle();
                         // choices:
+                        Intent intent;
                         switch (menuItem.getItemId()) {
                             case R.id.nav_more:
-                                startActivity(new Intent(SpeakersActivity.this, MoreActivity.class),bundle);
+                                intent = new Intent(SpeakersActivity.this, MoreActivity.class);
+                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                                startActivity(intent,bundle);
                                 break;
                             case R.id.nav_agenda:
-                                startActivity(new Intent(SpeakersActivity.this, MainActivity.class),bundle);
+                                intent = new Intent(SpeakersActivity.this, MainActivity.class);
+                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                                startActivity(intent,bundle);
                                 break;
                             case R.id.nav_schedule:
-                                startActivity(new Intent(SpeakersActivity.this, ScheduleActivity.class),bundle);
+                                intent = new Intent(SpeakersActivity.this, ScheduleActivity.class);
+                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                                startActivity(intent,bundle);
                                 break;
                             default:
                                 break;
                         }
+
+                        finish();
 
                         return true;
                     }
