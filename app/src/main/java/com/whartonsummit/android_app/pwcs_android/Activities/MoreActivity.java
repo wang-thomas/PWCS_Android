@@ -16,6 +16,7 @@ import android.view.MenuItem;
 import com.ogaclejapan.smarttablayout.SmartTabLayout;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItemAdapter;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems;
+import com.whartonsummit.android_app.pwcs_android.Fragments.AboutFragment;
 import com.whartonsummit.android_app.pwcs_android.Fragments.FaqFragment;
 import com.whartonsummit.android_app.pwcs_android.R;
 import com.whartonsummit.android_app.pwcs_android.Fragments.TestBlankFragment;
@@ -28,13 +29,12 @@ public class MoreActivity extends AppCompatActivity implements TestBlankFragment
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_more);
-        setTitle("PWCS · More");
+        setTitle(R.string.more_title);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.navigation_drawer);
         FragmentPagerItemAdapter myAdapter = new FragmentPagerItemAdapter(
                 getSupportFragmentManager(), FragmentPagerItems.with(this)
-                .add("FAQ", FaqFragment.class)
-                .add("Emergency", TestBlankFragment.class)
-                .add("About Us", TestBlankFragment.class)
+                .add(getString(R.string.faq_title), FaqFragment.class)
+                .add(getString(R.string.about_title), AboutFragment.class)
                 .create());
 
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);

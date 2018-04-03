@@ -31,14 +31,14 @@ public class ScheduleActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_schedule);
-        setTitle("PWCS · Schedules");
+        setTitle(R.string.timeline_title);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.navigation_drawer);
         FragmentPagerItemAdapter myAdapter;
         myAdapter = new FragmentPagerItemAdapter(
                 getSupportFragmentManager(), FragmentPagerItems.with(this)
-                .add("Friday 13th", Day1Fragment.class)
-                .add("Saturday 14th", Day2Fragment.class)
-                .add("Sunday 15th", Day3Fragment.class)
+                .add(getString(R.string.friday_title), Day1Fragment.class)
+                .add(getString(R.string.saturday_title), Day2Fragment.class)
+                .add(getString(R.string.sunday_title), Day3Fragment.class)
                 .create());
 
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);

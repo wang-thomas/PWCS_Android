@@ -3,4 +3,26 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="timeline_title">Schedule</string>
+    <string name="panels_title">Panels</string>
+    <string name="events_title">Events</string>
+    <string name="speakers_title">Speakers</string>
+    <string name="more_title">More</string>
+    <string name="faq_title">FAQ</string>
+    <string name="about_title">About Us</string>
+    <string name="friday_title">13 Friday</string>
+    <string name="saturday_title">14 Saturday</string>
+    <string name="sunday_title">15 Sunday</string>
+
+    <string name="welcome_text">Welcome to PWCS 2018</string>c
+
+    <string name="technology_panel_title">Technology</string>
+    <string name="fashion_panel_title">Arts and Fashion</string>
+    <string name="ir_panel_title">International Relations</string>
+    <string name="estates_panel_title">Real Estates</string>
+    <string name="finance_panel_title">Finance</string>
+    <string name="social_panel_title">Social Responsibilities</string>
+    <string name="opening_panel_title">Opening Ceremony</string>
+    <string name="closing_panel_title">Closing Ceremony</string>
 </resources>

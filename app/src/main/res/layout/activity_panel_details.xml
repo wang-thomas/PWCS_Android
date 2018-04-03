@@ -14,7 +14,7 @@
         android:background="@color/colorPrimary"
         android:elevation="3dp"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        app:titleTextColor="@color/colorPrimaryDark" />
+        app:titleTextColor="@color/black" />
 
     <ScrollView
         android:layout_width="0dp"

@@ -36,18 +36,18 @@ public class SpeakersActivity extends AppCompatActivity implements TestBlankFrag
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_speakers);
-        setTitle("PWCS · Speakers");
+        setTitle(R.string.speakers_title);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.navigation_drawer);
         FragmentPagerItemAdapter myAdapter = new FragmentPagerItemAdapter(
                 getSupportFragmentManager(), FragmentPagerItems.with(this)
-                .add("Opening Ceremony", OpeningSpeakersFragment.class)
-                .add("Finance", FinanceSpeakersFragment.class)
-                .add("International Relations", IRSpeakersFragment.class)
-                .add("Technology", TechSpeakersFragment.class)
-                .add("Social Responsibility", SocialSpeakersFragment.class)
-                .add("Fashion", FashionSpeakersFragment.class)
-                .add("Real Estate", RealEstatesSpeakersFragment.class)
-                .add("Closing Ceremony", ClosingSpeakersFragment.class)
+                .add(getString(R.string.opening_panel_title), OpeningSpeakersFragment.class)
+                .add(getString(R.string.estates_panel_title), RealEstatesSpeakersFragment.class)
+                .add(getString(R.string.finance_panel_title), FinanceSpeakersFragment.class)
+                .add(getString(R.string.ir_panel_title), IRSpeakersFragment.class)
+                .add(getString(R.string.fashion_panel_title), FashionSpeakersFragment.class)
+                .add(getString(R.string.technology_panel_title), TechSpeakersFragment.class)
+                .add(getString(R.string.social_panel_title), SocialSpeakersFragment.class)
+                .add(getString(R.string.closing_panel_title), ClosingSpeakersFragment.class)
                 .create());
 
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);

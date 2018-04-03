@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">沃顿峰会</string>
+
+    <string name="timeline_title">日程安排</string>
+    <string name="panels_title">论坛版块</string>
+    <string name="events_title">其他活动</string>
+    <string name="speakers_title">参会嘉宾</string>
+    <string name="more_title">更多帮助</string>
+    <string name="faq_title">常见问题</string>
+    <string name="about_title">关于我们</string>
+    <string name="friday_title">13 星期五</string>
+    <string name="saturday_title">14 星期六</string>
+    <string name="sunday_title">15 星期日</string>
+
+    <string name="welcome_text">欢迎来到宾大沃顿中美峰会</string>
+
+    <string name="technology_panel_title">区块链科技</string>
+    <string name="fashion_panel_title">文化娱乐</string>
+    <string name="ir_panel_title">国际关系</string>
+    <string name="estates_panel_title">地产市场</string>
+    <string name="finance_panel_title">金融投资</string>
+    <string name="social_panel_title">社会责任</string>
+    <string name="opening_panel_title">开幕式</string>
+    <string name="closing_panel_title">闭幕式</string>
+</resources>

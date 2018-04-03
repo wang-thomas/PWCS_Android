@@ -29,12 +29,12 @@ public class MainActivity extends AppCompatActivity implements TestBlankFragment
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        setTitle("PWCS · Agenda");
+        setTitle(R.string.panels_title);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.navigation_drawer);
         FragmentPagerItemAdapter myAdapter = new FragmentPagerItemAdapter(
                 getSupportFragmentManager(), FragmentPagerItems.with(this)
-                .add("Panels", PanelsFragment.class)
-                .add("Events", EventsFragment.class)
+                .add(getString(R.string.panels_title), PanelsFragment.class)
+                .add(getString(R.string.events_title), EventsFragment.class)
                 .create());
 
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
