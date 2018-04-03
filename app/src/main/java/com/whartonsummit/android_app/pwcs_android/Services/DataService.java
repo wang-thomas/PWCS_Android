@@ -50,15 +50,26 @@ public class DataService {
         timelines = new HashMap<Integer, List<TimelineObj>>();
         // @TODO: Day 1 Schedules
         List<TimelineObj> day1 = new ArrayList<>();
-        day1.add(new TimelineObj("Finance Panel", "8AM - 9AM", "Annenburg Center", "Hello World"));
-        day1.add(new TimelineObj("Finance Panel", "8AM - 9AM", "Annenburg Center", "Hello World"));
-        day1.add(new TimelineObj("Finance Panel", "8AM - 9AM", "Annenburg Center", "Hello World"));
+        day1.add(new TimelineObj("观众注册", "14:00 - 18:00", "Hilton Inn At Penn", "观众至指定地点领取峰会手册，票据、名牌及纪念品。\n Audience register arrival with staff. Summit brochure, and badge will be distributed."));
+        day1.add(new TimelineObj("媒体发布会", "16:00 - 18:00", "Sheraton in University City", "媒体参与由峰会代表、沃顿校方代表组织的媒体发布会、媒体届时可以向峰会嘉宾代表及筹委会代表发问。\nPresentation by representatives from the Summit Board and the Wharton school to media."));
+        day1.add(new TimelineObj("职业发展论坛", "18:00 - 21:00", "Hilton Inn At Penn", "由峰会筹委会代表，猎聘代表及北美电信代表携招聘企业HR／高管进行职业发展讲座。部分企业会进行招聘活动。\n Presentation by representatives from the Summit Board, Liepin and HR from participating companies."));
         // @TODO: Day 2 Schedules
         List<TimelineObj> day2 = new ArrayList<>();
-        day2.add(new TimelineObj("Technology Panel", "8AM - 9AM", "Annenburg Center", "Hello World"));
+        day2.add(new TimelineObj("观众常规注册", "8:00 - 10:00", "Houston Hall Bodek Lounge", "观众至指定地点领取峰会手册，票据，名牌及纪念品。10:00至下午13:00为延后注册时间。\nAudience register arrival with staff. Summit brochure, and badge will be distributed."));
+        day2.add(new TimelineObj("峰会开幕式", "9:00 - 11:00", "Irvine Auditorium", "峰会筹委会主席致辞鸣谢，校方代表致辞，主讲嘉宾就责任这一主题展开演讲。\n嘉宾: 傅莹、郭广昌、张爽、Philip Rosler\nWelcoming speech will be given by Summit President and Dean of the Wharton School, followed by five keynote speakers.\nSpeakers: Fu Ying, Guo Guangchang, Zhu Baoguo, Su Mang, Philip Rosler"));
+        day2.add(new TimelineObj("分论坛：投资新领域", "12:30 - 14:30", "Irvine Auditorium", "投资者们该如何驾驭中国市场持续的监管变化、科技产业动荡等多重因素？\n嘉宾：Albert Ng、Yup Kim、Guang Yang、温晓东\n主持人：江予菲\nWith continuous regulatory changes, constant technological industry disruptions, and rising valuations across major asset classes, how can global investors better navigate the volatile but evolving Chinese market and economy?\nSpeakers: Albert Ng, Yup Kim, Yang Guang"));
+        day2.add(new TimelineObj("分论坛：地产新方向", "12:30 - 14:30", "Annenberg Center", "在这个充满机遇的时间节点，企业该如何实现从传统模式到新模式的平稳过渡？\n嘉宾：周忻、袁岳、王晞、王戈宏\n主持人：曹可凡\nIn this pivotal moment of transformation, how should the traditional real estate industry adjust smoothly into this new era, and how should companies adapt based on their unique characteristics instead of blindly following the trend?\nSpeakers: Zhou Xin, Yuan Yue, Wang Xi, Wang Gehong"));
+        day2.add(new TimelineObj("分论坛：文化新桥梁", "15:00 - 17:00", "Irvine Auditorium", "近年的行业大转型为娱乐以及时尚产业带来了怎样的影响？\n嘉宾：Wen Zhou、杨铭、温晓东、马薇薇\n主持人：江予菲\nWhat would already-established figures say about current Chinese fashion and entertainment, and what are their opinions on the impact that an increasing influx of capital has on the industry?\nSpeakers: Zhou Wen, Yang Ming, Su Mang\nHost:Jiang Yufei"));
+        day2.add(new TimelineObj("分论坛：中美新关系", "15:00 - 17:00", "Annenberg Center", "留学生应如何理解习主席和特朗普总统达成的共识以及“一代一路”的意义？\n嘉宾：傅莹、陆克文\n主持人：Avery Goldstein\nIn today's world, how should students make sense of the consensus between the two presidents of China and the U.S. as well as the significance of the Belt and Road initiative?\nSpeakers: Fu Ying，Kevin Rudd"));
+        day2.add(new TimelineObj("招聘会现场", "17:00 - 19:30", "Annenberg Center", "招聘企业将在外场设立展台，供与会者投递简历与企业对接。\nCareer Fair by participating companies, Audience can deliver resume and exchange contact."));
+        day2.add(new TimelineObj("INNO Talk 创业对谈", "19:00 - 21:00", "Annenberg Center", "创业企业与资方对谈，探讨大众创新万众创业形势下的思考与突破。\n嘉宾：金城，袁岳，马薇薇\nConversation between startups, industry leaders and investors."));
+        day2.add(new TimelineObj("特别专场：社会创新", "19:00 - 21:00", "The Study", "与青年领袖一起玩转社会创新。\n嘉宾：王一舟，苗世明，王赛\n主持人：高正\nYoung global leaders sharing stories of innovation."));
+        day2.add(new TimelineObj("菁英派对", "21:00 - 23:00", "Marriot Downtown", "在专业正式的研讨会之后以放松，娱乐为主题的菁英派对。\nAfter a day's of fruitful agenda, chill out with us at our social event. Talk, dance and drink with your peers."));
         // @TODO: Day 3 Schedules
         List<TimelineObj> day3 = new ArrayList<>();
-        day3.add(new TimelineObj("Closing Panel", "8AM - 9AM", "Annenburg Center", "Hello World"));
+        day3.add(new TimelineObj("分论坛：社会新责任", "10:00 - 12:00", "Annenburg Center", "企业家们如何看待企业可持续发展与社会责任，并对未来有怎样的展望？\n嘉宾：朱旭东，邓飞，王振耀，潘江雪\n主持人：曹可凡\nWhat are the thoughts of outstanding entrepreneurs on the status, problems, solutions, and future prospects of sustainable development and social responsibility of Chinese enterprises?\nSpeakers: Zhu Xudong, Deng Fei, Wang Zhenyao, Pan Jiangxue"));
+        day3.add(new TimelineObj("分论坛：技术新革命", "10:00 - 12:00", "Irvine Auditorium", "以创新科技为核心的新产业将对传统行业造成怎样的冲击？\n嘉宾:应书岭，陈伟星，戴科彬，Jeff Garzik，初帅\n主持人:陈一佳\nHow will new forces shape the trajectories of technology development in China and in the world? As college students, how should we leverage surrounding opportunities to make a dent in the universe?\nSpeakers: Ying Shuling, Chen Weixing, Dai Kebin, Jeff Garzik"));
+        day3.add(new TimelineObj("峰会闭幕式", "12:30 - 15:15", "Irvine Auditorium", "峰会筹委会副主席致辞鸣谢，校方代表致辞，主讲嘉宾就创新这一主题展开演讲\n嘉宾：崔天凯，Pete Walker，王振耀，王高飞\nClosing remarks will be given by Summit Vice President and Vice Dean of the Wharton School, followed by four keynote speakers.\nSpeakers: Cui Tiankai, Pete Walker, Wang Zhenyao"));
         timelines.put(1, day1);
         timelines.put(2, day2);
         timelines.put(3, day3);
@@ -74,72 +85,24 @@ public class DataService {
 
     public void populatePanels() {
         panels = new ArrayList<Panel>();
-        panels.add(new Panel("Finance Panel", R.drawable.panel_bg_hongkong,
-                "Make America Great Again", "9:00AM - 11:00AM",
-                Location.ANNENBURG, "The 2018 Penn Wharton China Summit will be held on April 13th-15th, " +
-                "2018 at the University of Pennsylvania. Hosted by the China Summit Foundation and the Penn Wharton China Center, " +
-                "and further supported by the Chinese embassy and the government of Pennsylvania, PWCS is committed to build an " +
-                "influential platform that promotes communications between the two countries and establish connections among " +
-                "students oversea in the United States. With over 1500 attendees coming from 4 countries, 34 States and over 70 Cities, " +
-                "the inaugural PWCS in April 2016 has already become the largest student organized summit in the United States. " +
-                "2018 is an important year for the development of US-China relationship. We hope to strengthen the communication and " +
-                "facilitate cooperation between top students, professionals and corporations from both countries, and contribute " +
-                "to the long-lasting friendship between the United States and China."));
-        panels.add(new Panel("Internation Relations Panel", R.drawable.panel_bg_beijing,
-                "Make America Tech Again", "1:00PM - 3:00PM",
-                Location.INNATPENN, "The 2018 Penn Wharton China Summit will be held on April 13th-15th, " +
-                "2018 at the University of Pennsylvania. Hosted by the China Summit Foundation and the Penn Wharton China Center, " +
-                "and further supported by the Chinese embassy and the government of Pennsylvania, PWCS is committed to build an " +
-                "influential platform that promotes communications between the two countries and establish connections among " +
-                "students oversea in the United States. With over 1500 attendees coming from 4 countries, 34 States and over 70 Cities, " +
-                "the inaugural PWCS in April 2016 has already become the largest student organized summit in the United States. " +
-                "2018 is an important year for the development of US-China relationship. We hope to strengthen the communication and " +
-                "facilitate cooperation between top students, professionals and corporations from both countries, and contribute " +
-                "to the long-lasting friendship between the United States and China."));
-        panels.add(new Panel("Real Estate Panel", R.drawable.panel_bg_chicago,
-                "Make America Tech Again", "1:00PM - 3:00PM",
-                Location.INNATPENN, "The 2018 Penn Wharton China Summit will be held on April 13th-15th, " +
-                "2018 at the University of Pennsylvania. Hosted by the China Summit Foundation and the Penn Wharton China Center, " +
-                "and further supported by the Chinese embassy and the government of Pennsylvania, PWCS is committed to build an " +
-                "influential platform that promotes communications between the two countries and establish connections among " +
-                "students oversea in the United States. With over 1500 attendees coming from 4 countries, 34 States and over 70 Cities, " +
-                "the inaugural PWCS in April 2016 has already become the largest student organized summit in the United States. " +
-                "2018 is an important year for the development of US-China relationship. We hope to strengthen the communication and " +
-                "facilitate cooperation between top students, professionals and corporations from both countries, and contribute " +
-                "to the long-lasting friendship between the United States and China."));
-        panels.add(new Panel("Arts and Fashion Panel", R.drawable.panel_bg_la,
-                "Make America Tech Again", "1:00PM - 3:00PM",
-                Location.INNATPENN, "The 2018 Penn Wharton China Summit will be held on April 13th-15th, " +
-                "2018 at the University of Pennsylvania. Hosted by the China Summit Foundation and the Penn Wharton China Center, " +
-                "and further supported by the Chinese embassy and the government of Pennsylvania, PWCS is committed to build an " +
-                "influential platform that promotes communications between the two countries and establish connections among " +
-                "students oversea in the United States. With over 1500 attendees coming from 4 countries, 34 States and over 70 Cities, " +
-                "the inaugural PWCS in April 2016 has already become the largest student organized summit in the United States. " +
-                "2018 is an important year for the development of US-China relationship. We hope to strengthen the communication and " +
-                "facilitate cooperation between top students, professionals and corporations from both countries, and contribute " +
-                "to the long-lasting friendship between the United States and China."));
-        panels.add(new Panel("Social Responsibility Panel", R.drawable.panel_bg_shanghai,
-                "Make America Tech Again", "1:00PM - 3:00PM",
-                Location.INNATPENN, "The 2018 Penn Wharton China Summit will be held on April 13th-15th, " +
-                "2018 at the University of Pennsylvania. Hosted by the China Summit Foundation and the Penn Wharton China Center, " +
-                "and further supported by the Chinese embassy and the government of Pennsylvania, PWCS is committed to build an " +
-                "influential platform that promotes communications between the two countries and establish connections among " +
-                "students oversea in the United States. With over 1500 attendees coming from 4 countries, 34 States and over 70 Cities, " +
-                "the inaugural PWCS in April 2016 has already become the largest student organized summit in the United States. " +
-                "2018 is an important year for the development of US-China relationship. We hope to strengthen the communication and " +
-                "facilitate cooperation between top students, professionals and corporations from both countries, and contribute " +
-                "to the long-lasting friendship between the United States and China."));
-        panels.add(new Panel("Technology Panel", R.drawable.panel_bg_seattle,
-                "Make America Tech Again", "1:00PM - 3:00PM",
-                Location.INNATPENN, "The 2018 Penn Wharton China Summit will be held on April 13th-15th, " +
-                "2018 at the University of Pennsylvania. Hosted by the China Summit Foundation and the Penn Wharton China Center, " +
-                "and further supported by the Chinese embassy and the government of Pennsylvania, PWCS is committed to build an " +
-                "influential platform that promotes communications between the two countries and establish connections among " +
-                "students oversea in the United States. With over 1500 attendees coming from 4 countries, 34 States and over 70 Cities, " +
-                "the inaugural PWCS in April 2016 has already become the largest student organized summit in the United States. " +
-                "2018 is an important year for the development of US-China relationship. We hope to strengthen the communication and " +
-                "facilitate cooperation between top students, professionals and corporations from both countries, and contribute " +
-                "to the long-lasting friendship between the United States and China."));
+        panels.add(new Panel("中国地产转型新方向", R.drawable.panel_bg_hongkong,
+                "Make America Great Again", "12:30 - 14:30 | Saturday",
+                Location.ANNENBURG, "近年来中国房地产投资增速持续下滑，库存不断攀升，销售增长出现疲态。政府出台一系列刺激政策，并将“去库存”列为中央经济工作会议上主要任务之一。在此背景下，一线城市房地产市场率先复苏，而二三线城市的市场表现则差强人意，城市间分化格局进一步加剧。面对当下的楼市特征，房地产行业应如何突破瓶颈，转换思维，优化盈利模式，实现房地产市场从结构到功能的根本转变，成为迫在眉睫的焦点话题。<br/>房地产经营业态正值转型之际，不同的转型模式正不断涌现：以特色小镇，养老地产，生态产业园为代表的多元服务板块正逐步兴起以满足购房者更高更准确的购房需求；而在政府对房屋租赁市场发展的大力推动下又催生了一批专注于长租公寓的房地产企业，越来越多的地产项目被作为公租房开发。<br/>在当下这个充满变革与机遇的时间节点，企业该如何实现从传统模式到新模式的平稳过渡？企业如何在众多转型方向中量体裁衣，避免盲目跟从？国家对这些新模式的兴起又持有怎样的态度与预期？本分论坛将探讨新兴房地产模式与传统房地产模式的碰撞与融合。"));
+        panels.add(new Panel("塑造中国新投资领域", R.drawable.panel_bg_beijing,
+                "Make America Tech Again", "12:30 - 14:30 | Saturday",
+                Location.INNATPENN, "在过去十年间,低利率、生产率低增长、投资机会匮乏使外国投资者离开本国在国际范围内寻找更高的回报。在这过程中,以中国为代表的发展中国家用全面且迅速的经济发展吸引了世界的目光。那么,在市场监管变化、科技产业冲击和资产估值上升的背景下,投资者该如何捕获中国的新机遇?而中国又会在新一轮全球化中占领何种地位?"));
+        panels.add(new Panel("新时代下的中美关系", R.drawable.panel_bg_chicago,
+                "Make America Tech Again", "15:00 - 17:00 | Saturday",
+                Location.INNATPENN, "中美关系是21世纪最重要的国际关系。作为世界前两大经济体、最大的发达国家和最大的发展中国家，美国和中国应如何避免重蹈过去几百年间守成大国和新兴大国跌入“修昔底德陷阱”的覆辙？21世纪的青年学生应如何从这些重大的首脑会晤和论坛中获得启迪？他们又能在哪些方面为“一代一路”倡议及中美关系发展出力？"));
+        panels.add(new Panel("构建中美文化新桥梁", R.drawable.panel_bg_la,
+                "Make America Tech Again", "15:00 - 17:00 | Saturday",
+                Location.INNATPENN, "我们这一代，中国娱乐将逐渐走向世界。在追求国际化视野和多文化沟通的同时，我们也努力的打造着新时代的“中国原创”。在这个过程中，科技快速发展，多元化媒体的成功预示着新时代传媒的到来；文化逐渐超越国界，在中美文娱的频繁合作中，“中国制造”和“中国观众”登上世界舞台；新旧媒体的冲击下，不同文化的碰撞中，创新带来灵感，也让我们有展望未来的勇气。新的时代，我们如何搭起一座连接中国与世界的桥梁？在机遇与挑战中，我们将怎样定义属于自己的“娱乐新时代”？"));
+        panels.add(new Panel("企业可持续发展与社会责任", R.drawable.panel_bg_shanghai,
+                "Make America Tech Again", "10:00 - 12:00 | Sunday",
+                Location.INNATPENN, "“我们这一代”不只是善于创新，敢于挑战的一代，更是勇于承担社会责任，践行可持续发展的一代。在中国经济结构转型的今天，许多社会问题逐步凸显，国家十三五规划和可持续发展目标的实施面临着诸多机遇和挑战。在各方探索者和实践者的努力，以及商业、媒体、科技、创新和文化等元素的融入之下，中国的公益慈善行业正在呈积极态势发展。对企业来讲，社会价值的实现与商业价值同样重要，公益元素可以帮助企业品牌与文化的建设、社会影响力的提升以及战略的转型；对公益机构来讲，社会各界资源的联动有利于社会问题的改善和解决；对政府和媒体来讲，关注社会议题，推动社会发展，传播社会正能量一直都是刚需。因此，本次分论坛将邀请优秀的企业家讨论中国企业可持续发展与社会责任的现状、问题、解决方案和未来展望。"));
+        panels.add(new Panel("区块链革新的挑战与机遇", R.drawable.panel_bg_seattle,
+                "Make America Tech Again", "10:00 - 12:00 | Sunday",
+                Location.INNATPENN, "区块链技术在各行业中的应用有更加透明、可审计、更难被攻击、效率高、几乎不存在“第三方”等特质。这些特质使区块链技术可以应用在一些与数据或交易系统打交道的行业，包括但不限于银行业、供应链管理、物联网、保险业、云储存、政府管理、医疗业、能源管理、零售业、房地产业等等等等。其“轻所有权、重使用权”及去中心化的中心思想使这项技术使区块链技术被认为是继蒸汽机、电力、信息和互联网科技之后，目前最有潜力触发第五轮颠覆性革命浪潮的核心技术。"));
     }
 
     /*
@@ -152,15 +115,11 @@ public class DataService {
 
     public void populateEvents() {
         events = new ArrayList<>();
-        events.add(new Event("InnoTalk", R.drawable.event_bg_innotalk, "1:00PM - 3:00PM", Location.INNATPENN, "The 2018 Penn Wharton China Summit will be held on April 13th-15th, " +
-                "2018 at the University of Pennsylvania. Hosted by the China Summit Foundation and the Penn Wharton China Center, " +
-                "and further supported by the Chinese embassy and the government of Pennsylvania, PWCS is committed to build an " +
-                "influential platform that promotes communications between the two countries and establish connections among " +
-                "students oversea in the United States. With over 1500 attendees coming from 4 countries, 34 States and over 70 Cities, " +
-                "the inaugural PWCS in April 2016 has already become the largest student organized summit in the United States. " +
-                "2018 is an important year for the development of US-China relationship. We hope to strengthen the communication and " +
-                "facilitate cooperation between top students, professionals and corporations from both countries, and contribute " +
-                "to the long-lasting friendship between the United States and China."));
+        events.add(new Event("Career Panel 求职论坛", R.drawable.polygon_yellow, "18:00 - 19:30 | Friday", Location.INNATPENN, "想知道国内HR最看重海归身上的哪些特质吗?<br/>想了解留学生回国就业最佳的发展方向有哪些？<br/>想倾听人力资源专家对于海归优劣势、竞争力、就业趋势的看法吗？<br/>想让资深企业人解答你求职、创业中遇到的困惑吗？<br/>我们相约于宾大沃顿中美峰会与猎聘北美携手主办本届<职业发展论坛>，将带给观众带来最理性的职业分析和最宝贵的求职经验。届时为大家邀请到了5位最资深的企业人和人力资源专家，以“北美留学生的职业发展”、“留学生竞争力”、“留学生回国就业趋势”等留学生求职话题进行现场探讨。活动期间，峰会筹委会将带来十余家知名企业进行现场招聘，为求职者提供一个现场求职的机会。"));
+        events.add(new Event("Career Fair 招聘会", R.drawable.polygon_blue, "17:00 - 19:30 | Saturday", Location.ANNENBURG, "沃顿中美峰会致力于构建中国与海外精英们的民间纽带，搭建海外菁英启发与就职的交流平台。本次招聘会旨在连结中美两国的优秀学子，帮助中美优质企业与海外优秀学子的对接，并为有意向在北美发展的中国企业和美国企业物色拥有海外经验的优秀人才。部分参与此次招聘会的企业名单如下：众美房地产，招商银行，建信信托，药明康德，英雄互娱,中国人寿，小米，Talking Data, 猎聘网, OPPO, UB TECH , 泰洋川禾，TD腾云，Lovesurvive，英雄互娱，聚联美亚，易思汇，吃货小分队，帝国教育，synopay，牛犊创投，易美留学，易思汇，北美留学日报"));
+        events.add(new Event("INNO Talk", R.drawable.polygon_black, "19:00 - 21:00 | Saturday", Location.ANNENBURG, "承接上一代开拓者的脚步，我们这一代也在探索那些振奋人心的创业理想。为了提供全球化的视野给新一代的创业者，沃顿峰会设立了InnoTalk（创业对话）这一活动。InnoTalk致力于为中美创新创业者，领域搭建信息互换的桥梁。活动流程将以峰会的六个板块作为背景，邀请社会责任，房地产，文娱，科技，国际关系，金融等领域的6名杰出北美创业代表来现场进行话题分析。6个不同领域的团队将依次演讲展示各自的创业成果与理念，并与5位特邀嘉宾和现场观众进行Q&A互动。"));
+        events.add(new Event("特别论坛：社会创新", R.drawable.polygon_green, "19:00 - 21:00 | Saturday", Location.INNATPENN, "中国有越来越多的优秀青年人恪守初心，敢于创新和挑战，愿意用属于青年人自己的方式去改善社会问题，努力让我们的“新时代”变得更美好。“我们这一代”不只是善于创新，敢于挑战的一代，更是勇于承担社会责任，践行可持续发展的一代。<br/>本次分论坛将围绕青年领袖的社会创新经历和故事，旨在与现场的优秀留美青年学生学者一起互动，讨论未来中国的青年人将如何在“新时代”的引领下，利用创新的思维和方式整合跨界资源，改善社会问题，践行社会使命，并最终成为未来社会的脊梁。"));
+        events.add(new Event("菁英派对", R.drawable.polygon_pink, "21:00 - 23:00 | Saturday", Location.INNATPENN, "在专业正式的研讨会之后会有大家期待已久的菁英派对。 以放松、娱乐为主题，菁英派对是一个大家相互认识、交流的绝佳机会。在派对上，你将能够与本次沃顿中美峰会的组织者们（在读宾大学生）进行社交活动。同时，你也会遇到来自北美各大高校的小伙伴们。你以为这是另一次全程尬聊的活动吗？那你就错了。我们为大家准备了各种惊险刺激的娱乐场游戏，配上精心布置的场地和让人情不自禁一起摇摆的音乐。全程还有免费食物和酒水。据说菁英们都来了菁英派对，你还不来吗？"));
     }
 
     /*
