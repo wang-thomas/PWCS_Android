@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.whartonsummit.android_app.pwcs_android.Activities.EventDetailsActivity;
 import com.whartonsummit.android_app.pwcs_android.Activities.PanelDetailsActivity;
 import com.whartonsummit.android_app.pwcs_android.Models.Event;
 import com.whartonsummit.android_app.pwcs_android.Models.Panel;
@@ -47,20 +48,20 @@ public class EventsListAdapter extends RecyclerView.Adapter<EventsListAdapter.Vi
 //        holder.location.setText(event.getLocation().toString());
         holder.time.setText(event.getTime());
         holder.imageView.setImageResource(event.getImageResource());
-//        holder.cardView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = goToPanel(event, holder.title.getContext());
-//                holder.title.getContext().startActivity(intent);
-//            }
-//        });
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = goToEvent(event, holder.title.getContext());
+                holder.title.getContext().startActivity(intent);
+            }
+        });
     }
 
-//    private Intent goToEvent(Panel panel, Context context){
-//        Intent intent= new Intent(context, PanelDetailsActivity.class);
-//        intent.putExtra("panel", panel);
-//        return intent;
-//    }
+    private Intent goToEvent(Event event, Context context){
+        Intent intent= new Intent(context, EventDetailsActivity.class);
+        intent.putExtra("event", event);
+        return intent;
+    }
 
     @Override
     public int getItemCount() {

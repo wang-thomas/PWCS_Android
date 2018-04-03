@@ -1,10 +1,12 @@
 package com.whartonsummit.android_app.pwcs_android.Models;
 
+import java.io.Serializable;
+
 /**
  * Created by zhileizheng on 4/1/18.
  */
 
-public class Event {
+public class Event implements Serializable{
     private String name;
     private int imageResource;
     private String time;
