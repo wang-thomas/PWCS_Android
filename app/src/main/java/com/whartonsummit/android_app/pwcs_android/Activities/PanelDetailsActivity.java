@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -13,6 +14,7 @@ import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -21,6 +23,7 @@ import com.mapbox.mapboxsdk.Mapbox;
 import com.mapbox.mapboxsdk.annotations.Icon;
 import com.mapbox.mapboxsdk.annotations.IconFactory;
 import com.mapbox.mapboxsdk.annotations.MarkerOptions;
+import com.mapbox.mapboxsdk.camera.CameraPosition;
 import com.mapbox.mapboxsdk.geometry.LatLng;
 import com.mapbox.mapboxsdk.maps.MapView;
 import com.mapbox.mapboxsdk.maps.MapboxMap;
@@ -91,34 +94,39 @@ public class PanelDetailsActivity extends AppCompatActivity {
         mapView.getMapAsync(new OnMapReadyCallback() {
             @Override
             public void onMapReady(MapboxMap mapboxMap) {
-                IconFactory iconFactory = IconFactory.getInstance(PanelDetailsActivity.this);
-                Drawable image = ContextCompat.getDrawable(PanelDetailsActivity.this, R.drawable.map_marker_icon);
-                Icon icon = iconFactory.fromBitmap(resize(image));
+                mapboxMap.setCameraPosition(new CameraPosition.Builder()
+                        .target(new LatLng(location.toLatLng()[0], location.toLatLng()[1]))
+                        .zoom(15)
+                        .build());
                 mapboxMap.addMarker(new MarkerOptions()
                         .position(new LatLng(location.toLatLng()[0], location.toLatLng()[1]))
                         .title(location.toString())
                         .snippet("UPenn")
-                        .icon(icon)
                 );
+                mapboxMap.setOnMapClickListener(new MapboxMap.OnMapClickListener() {
+                    @Override
+                    public void onMapClick(@NonNull LatLng point) {
+                        goToGoogleMap();
+                    }
+                });
             }
         });
-    }
-
-    private Bitmap resize(Drawable image) {
-        Bitmap b = ((BitmapDrawable)image).getBitmap();
-        Bitmap bitmapResized = Bitmap.createScaledBitmap(b, 100, 100, false);
-        return bitmapResized;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.map_action) {
-            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com/maps/search/?api=1&query=Annenberg+Center+for+the+Performing+Arts"));
-            startActivity(browserIntent);
+            goToGoogleMap();
             return true;
         }
         this.finish();
         return super.onOptionsItemSelected(item);
+    }
+
+    private void goToGoogleMap() {
+        Location location = panel.getLocation();
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com/maps/search/?api=1&query=" + location.toSearchTerm()));
+        startActivity(browserIntent);
     }
 
     @Override

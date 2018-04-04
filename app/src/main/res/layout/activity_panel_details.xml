@@ -124,8 +124,8 @@
                     android:layout_height="match_parent"
                     mapbox:mapbox_cameraTargetLat="39.9528219"
                     mapbox:mapbox_cameraTargetLng="-75.1962859"
-                    mapbox:mapbox_styleUrl="mapbox://styles/tomz/cjfbtxdc486jd2rlgrs4vv9sm"
-                    mapbox:mapbox_cameraZoom="12" />
+                    mapbox:mapbox_styleUrl="mapbox://styles/tomz/cjcijfj06876g2rmrq1we69pp"
+                    mapbox:mapbox_cameraZoom="13" />
 
             </android.support.v7.widget.CardView>
 

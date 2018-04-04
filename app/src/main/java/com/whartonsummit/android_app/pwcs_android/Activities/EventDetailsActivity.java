@@ -4,20 +4,26 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.mapbox.mapboxsdk.Mapbox;
 import com.mapbox.mapboxsdk.annotations.Icon;
 import com.mapbox.mapboxsdk.annotations.IconFactory;
 import com.mapbox.mapboxsdk.annotations.MarkerOptions;
+import com.mapbox.mapboxsdk.camera.CameraPosition;
 import com.mapbox.mapboxsdk.geometry.LatLng;
 import com.mapbox.mapboxsdk.maps.MapView;
 import com.mapbox.mapboxsdk.maps.MapboxMap;
@@ -89,15 +95,21 @@ public class EventDetailsActivity extends AppCompatActivity {
         mapView.getMapAsync(new OnMapReadyCallback() {
             @Override
             public void onMapReady(MapboxMap mapboxMap) {
-                IconFactory iconFactory = IconFactory.getInstance(EventDetailsActivity.this);
-                Drawable image = ContextCompat.getDrawable(EventDetailsActivity.this, R.drawable.map_marker_icon);
-                Icon icon = iconFactory.fromBitmap(resize(image));
+                mapboxMap.setCameraPosition(new CameraPosition.Builder()
+                    .target(new LatLng(location.toLatLng()[0], location.toLatLng()[1]))
+                    .zoom(15)
+                    .build());
                 mapboxMap.addMarker(new MarkerOptions()
                         .position(new LatLng(location.toLatLng()[0], location.toLatLng()[1]))
                         .title(location.toString())
                         .snippet("UPenn")
-                        .icon(icon)
                 );
+                mapboxMap.setOnMapClickListener(new MapboxMap.OnMapClickListener() {
+                    @Override
+                    public void onMapClick(@NonNull LatLng point) {
+                        goToGoogleMap();
+                    }
+                });
             }
         });
     }
@@ -109,9 +121,26 @@ public class EventDetailsActivity extends AppCompatActivity {
     }
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.right_button, menu);
+        return true;
+    }
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.map_action) {
+            goToGoogleMap();
+            return true;
+        }
         this.finish();
         return super.onOptionsItemSelected(item);
+    }
+
+    private void goToGoogleMap() {
+        Location location = event.getLocation();
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com/maps/search/?api=1&query=" + location.toSearchTerm()));
+        startActivity(browserIntent);
     }
 
     @Override
