@@ -28,6 +28,7 @@ import com.mapbox.mapboxsdk.geometry.LatLng;
 import com.mapbox.mapboxsdk.maps.MapView;
 import com.mapbox.mapboxsdk.maps.MapboxMap;
 import com.mapbox.mapboxsdk.maps.OnMapReadyCallback;
+import com.squareup.picasso.Picasso;
 import com.whartonsummit.android_app.pwcs_android.Models.Location;
 import com.whartonsummit.android_app.pwcs_android.Models.Panel;
 import com.whartonsummit.android_app.pwcs_android.R;
@@ -57,7 +58,7 @@ public class PanelDetailsActivity extends AppCompatActivity {
 
         setUpToolbar();
         setUpView();
-        imageView.setImageResource(panel.getImageResource());
+        Picasso.get().load(panel.getImageUrl()).into(imageView);
 
         Mapbox.getInstance(this, "pk.eyJ1IjoidG9teiIsImEiOiJjajJyN3dyenkwMDVqMndzN3Y0cjk0bTRmIn0.FEEGdubneAr17N9f8ZHh5g");
         mapView.onCreate(savedInstanceState);

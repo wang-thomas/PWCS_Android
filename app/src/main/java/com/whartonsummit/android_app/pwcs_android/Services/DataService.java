@@ -89,22 +89,22 @@ public class DataService {
 
     public void populatePanels() {
         panels = new ArrayList<Panel>();
-        panels.add(new Panel("中国地产转型新方向", R.drawable.panel_bg_hongkong,
+        panels.add(new Panel("中国地产转型新方向", "https://s3.amazonaws.com/pwcs2018/panel-bg-hongkong.png",
                 "Make America Great Again", "12:30 - 14:30 | Saturday",
                 Location.ANNENBERG, "近年来中国房地产投资增速持续下滑，库存不断攀升，销售增长出现疲态。政府出台一系列刺激政策，并将“去库存”列为中央经济工作会议上主要任务之一。在此背景下，一线城市房地产市场率先复苏，而二三线城市的市场表现则差强人意，城市间分化格局进一步加剧。面对当下的楼市特征，房地产行业应如何突破瓶颈，转换思维，优化盈利模式，实现房地产市场从结构到功能的根本转变，成为迫在眉睫的焦点话题。<br/>房地产经营业态正值转型之际，不同的转型模式正不断涌现：以特色小镇，养老地产，生态产业园为代表的多元服务板块正逐步兴起以满足购房者更高更准确的购房需求；而在政府对房屋租赁市场发展的大力推动下又催生了一批专注于长租公寓的房地产企业，越来越多的地产项目被作为公租房开发。<br/>在当下这个充满变革与机遇的时间节点，企业该如何实现从传统模式到新模式的平稳过渡？企业如何在众多转型方向中量体裁衣，避免盲目跟从？国家对这些新模式的兴起又持有怎样的态度与预期？本分论坛将探讨新兴房地产模式与传统房地产模式的碰撞与融合。"));
-        panels.add(new Panel("塑造中国新投资领域", R.drawable.panel_bg_beijing,
+        panels.add(new Panel("塑造中国新投资领域", "https://s3.amazonaws.com/pwcs2018/panel-bg-beijing.png",
                 "Make America Tech Again", "12:30 - 14:30 | Saturday",
                 Location.INNATPENN, "在过去十年间,低利率、生产率低增长、投资机会匮乏使外国投资者离开本国在国际范围内寻找更高的回报。在这过程中,以中国为代表的发展中国家用全面且迅速的经济发展吸引了世界的目光。那么,在市场监管变化、科技产业冲击和资产估值上升的背景下,投资者该如何捕获中国的新机遇?而中国又会在新一轮全球化中占领何种地位?"));
-        panels.add(new Panel("新时代下的中美关系", R.drawable.panel_bg_chicago,
+        panels.add(new Panel("新时代下的中美关系", "https://s3.amazonaws.com/pwcs2018/panel-bg-chicago.png",
                 "Make America Tech Again", "15:00 - 17:00 | Saturday",
                 Location.INNATPENN, "中美关系是21世纪最重要的国际关系。作为世界前两大经济体、最大的发达国家和最大的发展中国家，美国和中国应如何避免重蹈过去几百年间守成大国和新兴大国跌入“修昔底德陷阱”的覆辙？21世纪的青年学生应如何从这些重大的首脑会晤和论坛中获得启迪？他们又能在哪些方面为“一代一路”倡议及中美关系发展出力？"));
-        panels.add(new Panel("构建中美文化新桥梁", R.drawable.panel_bg_la,
+        panels.add(new Panel("构建中美文化新桥梁", "https://s3.amazonaws.com/pwcs2018/panel-bg-la.png",
                 "Make America Tech Again", "15:00 - 17:00 | Saturday",
                 Location.INNATPENN, "我们这一代，中国娱乐将逐渐走向世界。在追求国际化视野和多文化沟通的同时，我们也努力的打造着新时代的“中国原创”。在这个过程中，科技快速发展，多元化媒体的成功预示着新时代传媒的到来；文化逐渐超越国界，在中美文娱的频繁合作中，“中国制造”和“中国观众”登上世界舞台；新旧媒体的冲击下，不同文化的碰撞中，创新带来灵感，也让我们有展望未来的勇气。新的时代，我们如何搭起一座连接中国与世界的桥梁？在机遇与挑战中，我们将怎样定义属于自己的“娱乐新时代”？"));
-        panels.add(new Panel("企业可持续发展与社会责任", R.drawable.panel_bg_shanghai,
+        panels.add(new Panel("企业可持续发展与社会责任", "https://s3.amazonaws.com/pwcs2018/panel-bg-shanghai.png",
                 "Make America Tech Again", "10:00 - 12:00 | Sunday",
                 Location.INNATPENN, "“我们这一代”不只是善于创新，敢于挑战的一代，更是勇于承担社会责任，践行可持续发展的一代。在中国经济结构转型的今天，许多社会问题逐步凸显，国家十三五规划和可持续发展目标的实施面临着诸多机遇和挑战。在各方探索者和实践者的努力，以及商业、媒体、科技、创新和文化等元素的融入之下，中国的公益慈善行业正在呈积极态势发展。对企业来讲，社会价值的实现与商业价值同样重要，公益元素可以帮助企业品牌与文化的建设、社会影响力的提升以及战略的转型；对公益机构来讲，社会各界资源的联动有利于社会问题的改善和解决；对政府和媒体来讲，关注社会议题，推动社会发展，传播社会正能量一直都是刚需。因此，本次分论坛将邀请优秀的企业家讨论中国企业可持续发展与社会责任的现状、问题、解决方案和未来展望。"));
-        panels.add(new Panel("区块链革新的挑战与机遇", R.drawable.panel_bg_seattle,
+        panels.add(new Panel("区块链革新的挑战与机遇", "https://s3.amazonaws.com/pwcs2018/panel-bg-seattle.png",
                 "Make America Tech Again", "10:00 - 12:00 | Sunday",
                 Location.INNATPENN, "区块链技术在各行业中的应用有更加透明、可审计、更难被攻击、效率高、几乎不存在“第三方”等特质。这些特质使区块链技术可以应用在一些与数据或交易系统打交道的行业，包括但不限于银行业、供应链管理、物联网、保险业、云储存、政府管理、医疗业、能源管理、零售业、房地产业等等等等。其“轻所有权、重使用权”及去中心化的中心思想使这项技术使区块链技术被认为是继蒸汽机、电力、信息和互联网科技之后，目前最有潜力触发第五轮颠覆性革命浪潮的核心技术。"));
     }

@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
 import com.whartonsummit.android_app.pwcs_android.Activities.PanelDetailsActivity;
 import com.whartonsummit.android_app.pwcs_android.Models.Panel;
 import com.whartonsummit.android_app.pwcs_android.Models.Speaker;
@@ -44,9 +45,8 @@ public class PanelsListAdapter extends RecyclerView.Adapter<PanelsListAdapter.Vi
     public void onBindViewHolder(final PanelsListAdapter.ViewHolder holder, int position) {
         final Panel panel = data.get(position);
         holder.title.setText(panel.getName());
-//        holder.location.setText(panel.getLocation().toString());
         holder.time.setText(panel.getTime());
-        holder.imageView.setImageResource(panel.getImageResource());
+        Picasso.get().load(panel.getImageUrl()).into(holder.imageView);
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

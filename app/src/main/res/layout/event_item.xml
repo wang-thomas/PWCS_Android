@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="270dp"
         android:layout_gravity="center"
-        android:background="@drawable/panel_bg_chicago"
+        android:background="@drawable/panel_bg_shanghai"
         android:clipChildren="true"
         card_view:cardCornerRadius="4dp"
         card_view:cardElevation="3dp"

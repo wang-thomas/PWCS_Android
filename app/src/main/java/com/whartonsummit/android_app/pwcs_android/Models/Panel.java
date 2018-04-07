@@ -8,15 +8,15 @@ import java.io.Serializable;
 
 public class Panel implements Serializable {
     private String name;
-    private int imageResource;
+    private String imageUrl;
     private String subTitle;
     private String time;
     private Location location;
     private String desc;
 
-    public Panel (String name, int imageResource, String subTitle, String time, Location location, String desc) {
+    public Panel (String name, String imageUrl, String subTitle, String time, Location location, String desc) {
         this.name = name;
-        this.imageResource = imageResource;
+        this.imageUrl = imageUrl;
         this.subTitle = subTitle;
         this.time = time;
         this.location = location;
@@ -31,8 +31,8 @@ public class Panel implements Serializable {
         return desc;
     }
 
-    public int getImageResource() {
-        return imageResource;
+    public String getImageUrl() {
+        return imageUrl;
     }
 
     public String getSubTitle() {
@@ -49,18 +49,6 @@ public class Panel implements Serializable {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public void setDesc(String desc) {
-        this.desc = desc;
-    }
-
-    public void setImageResource(int imageResource) {
-        this.imageResource = imageResource;
-    }
-
-    public void setSubTitle(String subTitle) {
-        this.subTitle = subTitle;
     }
 
     public void setTime(String time) {
