@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.makeramen.roundedimageview.RoundedImageView;
+import com.squareup.picasso.Picasso;
 import com.whartonsummit.android_app.pwcs_android.Models.Speaker;
 import com.whartonsummit.android_app.pwcs_android.R;
 
@@ -48,7 +49,7 @@ public class SpeakerDetailsActivity extends AppCompatActivity {
     }
 
     private void setUpView(Speaker speaker) {
-        speakerImage.setImageResource(speaker.getImageResource());
+        Picasso.get().load(speaker.getImageUrl()).into(speakerImage);
         speakerName.setText(speaker.getName());
         speakerTitle.setText(speaker.getTitle());
         String htmlText = "<html><body style=\"text-align:justify; font-size: 14px\"> %s </body></Html>";

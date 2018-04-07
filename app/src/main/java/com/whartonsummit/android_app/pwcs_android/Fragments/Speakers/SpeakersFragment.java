@@ -45,12 +45,6 @@ public class SpeakersFragment extends android.support.v4.app.Fragment {
 
     private List<Speaker> getSpeakerData() {
         List<Speaker> speakerData = new ArrayList<Speaker>();
-        speakerData.add(new Speaker("Kevin Rudd", "temp", "Former Premier of Australia", "He is handsome", R.drawable.speaker_kevin_rudd));
-        speakerData.add(new Speaker("Fu Ying", "temp", "Former Premier of Australia", "He is handsome", R.drawable.speaker_fu_ying));
-        speakerData.add(new Speaker("Kebin Dai", "temp", "Former Premier of Australia", "He is handsome", R.drawable.speaker_kebin_dai));
-        speakerData.add(new Speaker("John Oliver", "temp", "Former Premier of Australia", "He is handsome", R.drawable.speaker_su_mang));
-        speakerData.add(new Speaker("Rajiv Ghandi", "temp", "Former Premier of Australia", "He is handsome", R.drawable.speaker_wang_xi));
-        speakerData.add(new Speaker("Superman", "temp", "Former Premier of Australia", "He is handsome", R.drawable.speaker_ying_shu_lin));
         return speakerData;
     }
 }

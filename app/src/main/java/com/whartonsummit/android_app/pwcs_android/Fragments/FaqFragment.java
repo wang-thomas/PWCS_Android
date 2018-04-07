@@ -14,6 +14,7 @@ import android.widget.ExpandableListView;
 import com.whartonsummit.android_app.pwcs_android.Adapters.FaqExpandableAdapter;
 import com.whartonsummit.android_app.pwcs_android.R;
 import com.whartonsummit.android_app.pwcs_android.R;
+import com.whartonsummit.android_app.pwcs_android.Services.DataService;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -44,14 +45,7 @@ public class FaqFragment extends Fragment {
     }
 
     private void prepareListData() {
-        questionsList = new ArrayList<String>();
-        answersToQuestions = new HashMap<String, String>();
-        // Adding child data
-        questionsList.add("Question 1");
-        questionsList.add("Question 2");
-        questionsList.add("Question 3");
-        answersToQuestions.put(questionsList.get(0), "Answer 1");
-        answersToQuestions.put(questionsList.get(1), "Answer 2");
-        answersToQuestions.put(questionsList.get(2), "Answer 3");
+        questionsList = DataService.getInstance().getQuestionsList();
+        answersToQuestions = DataService.getInstance().getAnswersToQuestions();
     }
 }

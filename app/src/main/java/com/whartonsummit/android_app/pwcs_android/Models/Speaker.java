@@ -11,14 +11,12 @@ public class Speaker implements Serializable{
     private String imageUrl;
     private String title;
     private String desc;
-    private int imageResource;
 
-    public Speaker (String name, String imageUrl, String title, String desc, int imageResource) {
+    public Speaker (String name, String imageUrl, String title, String desc) {
         this.name = name;
         this.imageUrl = imageUrl;
         this.title = title;
         this.desc = desc;
-        this.imageResource = imageResource;
     }
 
     public void setDesc(String desc) {
@@ -51,9 +49,5 @@ public class Speaker implements Serializable{
 
     public String getTitle() {
         return title;
-    }
-
-    public int getImageResource() {
-        return imageResource;
     }
 }

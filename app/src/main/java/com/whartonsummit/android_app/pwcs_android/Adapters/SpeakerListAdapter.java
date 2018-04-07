@@ -11,6 +11,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
 import com.whartonsummit.android_app.pwcs_android.Activities.PanelDetailsActivity;
 import com.whartonsummit.android_app.pwcs_android.Activities.SpeakerDetailsActivity;
 import com.whartonsummit.android_app.pwcs_android.Models.Panel;
@@ -49,7 +50,7 @@ public class SpeakerListAdapter extends RecyclerView.Adapter<SpeakerListAdapter.
         final Speaker speaker = data.get(position);
         holder.name.setText(speaker.getName());
         holder.title.setText(speaker.getTitle());
-        holder.imageView.setImageResource(speaker.getImageResource());
+        Picasso.get().load(speaker.getImageUrl()).into(holder.imageView);
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
