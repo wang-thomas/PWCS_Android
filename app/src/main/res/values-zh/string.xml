@@ -7,11 +7,15 @@
     <string name="events_title">其他活动</string>
     <string name="speakers_title">参会嘉宾</string>
     <string name="more_title">更多帮助</string>
+    <string name="contacts_title">联系方式</string>
     <string name="faq_title">常见问题</string>
     <string name="about_title">关于我们</string>
     <string name="friday_title">13 星期五</string>
     <string name="saturday_title">14 星期六</string>
     <string name="sunday_title">15 星期日</string>
+
+    <string name="personal">我的信息</string>
+    <string name="contact_list">联系列表</string>
 
     <string name="welcome_text">欢迎来到宾大沃顿中美峰会</string>
 
@@ -23,4 +27,9 @@
     <string name="social_panel_title">社会责任</string>
     <string name="opening_panel_title">开幕式</string>
     <string name="closing_panel_title">闭幕式</string>
+
+    <string name="first_name_edit">名字</string>
+    <string name="last_name_edit">姓氏</string>
+    <string name="phone_number_edit">电话</string>
+    <string name="email_edit">邮箱</string>
 </resources>

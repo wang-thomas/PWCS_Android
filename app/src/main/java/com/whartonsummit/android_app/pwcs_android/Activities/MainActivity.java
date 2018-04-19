@@ -81,6 +81,11 @@ public class MainActivity extends AppCompatActivity implements TestBlankFragment
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                                 startActivity(intent,bundle);
                                 break;
+                            case R.id.nav_contacts:
+                                intent = new Intent(MainActivity.this, ContactsActivity.class);
+                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                                startActivity(intent,bundle);
+                                break;
                             default:
                                 break;
                         }

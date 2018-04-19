@@ -21,7 +21,7 @@ import com.whartonsummit.android_app.pwcs_android.Fragments.FaqFragment;
 import com.whartonsummit.android_app.pwcs_android.R;
 import com.whartonsummit.android_app.pwcs_android.Fragments.TestBlankFragment;
 
-public class MoreActivity extends AppCompatActivity implements TestBlankFragment.OnFragmentInteractionListener {
+public class MoreActivity extends AppCompatActivity {
 
     private DrawerLayout mDrawerLayout;
 
@@ -80,6 +80,11 @@ public class MoreActivity extends AppCompatActivity implements TestBlankFragment
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                                 startActivity(intent, bundle);
                                 break;
+                            case R.id.nav_contacts:
+                                intent = new Intent(MoreActivity.this, ContactsActivity.class);
+                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                                startActivity(intent,bundle);
+                                break;
                             default:
                                 break;
                         }
@@ -89,11 +94,6 @@ public class MoreActivity extends AppCompatActivity implements TestBlankFragment
                         return true;
                     }
                 });
-    }
-
-    @Override
-    public void onTestFragmentInteraction(Uri string) {
-
     }
 
     @Override

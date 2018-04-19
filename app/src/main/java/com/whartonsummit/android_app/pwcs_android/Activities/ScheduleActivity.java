@@ -84,6 +84,11 @@ public class ScheduleActivity extends AppCompatActivity {
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                                 startActivity(intent,bundle);
                                 break;
+                            case R.id.nav_contacts:
+                                intent = new Intent(ScheduleActivity.this, ContactsActivity.class);
+                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                                startActivity(intent,bundle);
+                                break;
                             default:
                                 break;
                         }

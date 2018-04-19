@@ -17,5 +17,9 @@
             android:id="@+id/nav_more"
             android:icon="@drawable/ic_camera_black_24dp"
             android:title="@string/more_title" />
+        <item
+            android:id="@+id/nav_contacts"
+            android:icon="@drawable/ic_contact_mail_black_24dp"
+            android:title="@string/contacts_title" />
     </group>
 </menu>

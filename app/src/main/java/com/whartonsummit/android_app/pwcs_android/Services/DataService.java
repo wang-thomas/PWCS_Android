@@ -1,5 +1,10 @@
 package com.whartonsummit.android_app.pwcs_android.Services;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.SharedPreferences;
+
+import com.whartonsummit.android_app.pwcs_android.Models.Contact;
 import com.whartonsummit.android_app.pwcs_android.Models.Event;
 import com.whartonsummit.android_app.pwcs_android.Models.Location;
 import com.whartonsummit.android_app.pwcs_android.Models.Panel;
@@ -10,6 +15,9 @@ import com.whartonsummit.android_app.pwcs_android.R;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+
+import io.realm.Realm;
+import io.realm.RealmResults;
 
 /**
  * Created by zhileizheng on 3/29/18.
@@ -26,6 +34,8 @@ public class DataService {
 
     List<String> questionsList;
     HashMap<String, String> answersToQuestions;
+
+    Realm realm = Realm.getDefaultInstance();
 
     private DataService() {
         populateTimeline();
@@ -246,5 +256,66 @@ public class DataService {
 
     public HashMap<String, String> getAnswersToQuestions() {
         return answersToQuestions;
+    }
+
+    public Contact getDefaultContact(Activity activity) {
+        SharedPreferences sharedPref = activity.getPreferences(Context.MODE_PRIVATE);
+        String firstName = sharedPref.getString("firstName", "");
+        String lastName = sharedPref.getString("lastName", "");
+        String number = sharedPref.getString("phone", "");
+        String email = sharedPref.getString("email", "");
+        Contact contact = new Contact(firstName, lastName, number, email);
+        return contact;
+    }
+
+    public void writeUserContact(Activity activity, Contact contact) {
+        SharedPreferences sharedPref = activity.getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putString("firstName", contact.getFirstName());
+        editor.putString("lastName", contact.getLastName());
+        editor.putString("email", contact.getEmail());
+        editor.putString("phone", contact.getPhone());
+        editor.commit();
+    }
+
+    public List<Contact> getContacts() {
+        List<Contact> contacts = new ArrayList<Contact>();
+        RealmResults<Contact> contactsInRealm = realm.where(Contact.class).findAll();
+        for (Contact contact : contactsInRealm) {
+            contacts.add(new Contact(contact.getFirstName(), contact.getLastName(), contact.getPhone(), contact.getEmail()));
+        }
+        return contacts;
+    }
+
+    public boolean realmContains(Contact contact) {
+        RealmResults<Contact> contactsInRealm = realm.where(Contact.class)
+                                                    .equalTo("firstName", contact.getFirstName())
+                                                    .equalTo("lastName", contact.getLastName())
+                                                    .equalTo("phone", contact.getPhone())
+                                                    .equalTo("email", contact.getEmail()).findAll();
+        if (contactsInRealm.size() > 0 ) {
+            return true;
+        }
+        return false;
+    }
+
+    public void addContact(Contact contact) {
+        realm.beginTransaction();
+        realm.copyToRealm(contact);
+        realm.commitTransaction();
+    }
+
+    public void deleteContact(Contact contact) {
+        final RealmResults<Contact> results = realm.where(Contact.class)
+                .equalTo("firstName", contact.getFirstName())
+                .equalTo("lastName", contact.getLastName())
+                .equalTo("phone", contact.getPhone())
+                .equalTo("email", contact.getEmail()).findAll();
+        realm.executeTransaction(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
+                results.deleteFirstFromRealm();
+            }
+        });
     }
 }

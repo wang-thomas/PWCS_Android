@@ -92,6 +92,11 @@ public class SpeakersActivity extends AppCompatActivity implements TestBlankFrag
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                                 startActivity(intent,bundle);
                                 break;
+                            case R.id.nav_contacts:
+                                intent = new Intent(SpeakersActivity.this, ContactsActivity.class);
+                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                                startActivity(intent,bundle);
+                                break;
                             default:
                                 break;
                         }
