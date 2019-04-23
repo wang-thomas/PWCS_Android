@@ -4,19 +4,19 @@ apply plugin: 'realm-android'
 android {
     signingConfigs {
         config {
-            storeFile file('/Users/zhileizheng/keyStore')
-            keyAlias 'zhileiz'
-            keyPassword 'penTom32'
-            storePassword 'penTom32'
+            storeFile file('/Users/thomaswang/Documents/keyStore/keystore')
+            keyAlias 'wtpthomas'
+            keyPassword 'thomas990517'
+            storePassword '000000'
         }
     }
     compileSdkVersion 26
     defaultConfig {
-        applicationId "com.whartonsummit.android_app.pwcs_android"
+        applicationId "com.whartonsummit.android.pwcs_android"
         minSdkVersion 23
         targetSdkVersion 26
-        versionCode 1
-        versionName "1.0"
+        versionCode 3
+        versionName "2.1"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -36,7 +36,7 @@ repositories {
 }
 
 realm {
-    syncEnabled = true;
+    syncEnabled = true
 }
 
 dependencies {
@@ -47,22 +47,21 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
-    compile 'com.ogaclejapan.smarttablayout:library:1.6.1@aar'
-    compile 'com.ogaclejapan.smarttablayout:utils-v4:1.6.1@aar'
-    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.ogaclejapan.smarttablayout:library:1.6.1@aar' //changed
+    implementation 'com.ogaclejapan.smarttablayout:utils-v4:1.6.1@aar' //changed
     implementation 'com.android.support:design:26.1.0'
-    compile 'com.github.vipulasri:timelineview:1.0.6'
-    compile 'com.jakewharton:butterknife:8.8.1'
+    implementation 'com.github.vipulasri:timelineview:1.0.6'  //changed
+    implementation 'com.jakewharton:butterknife:8.8.1'  //changed
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
-    compile 'com.android.support:cardview-v7:26.1.0'
-    compile 'com.android.support:recyclerview-v7:26.1.0'
-    compile 'de.hdodenhof:circleimageview:2.2.0'
-    compile 'com.makeramen:roundedimageview:2.3.0'
+    implementation 'com.android.support:cardview-v7:26.1.0'  //changed
+    implementation 'com.android.support:recyclerview-v7:26.1.0' //changed
+    implementation 'de.hdodenhof:circleimageview:2.2.0'  //changed
+    implementation 'com.makeramen:roundedimageview:2.3.0'  //changed
     implementation 'com.squareup.picasso:picasso:2.71828'
     implementation 'com.squareup.retrofit2:retrofit:2.3.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
-    implementation 'com.mapbox.mapboxsdk:mapbox-android-sdk:5.5.1'
-    compile "com.google.zxing:core:3.3.0"
-    compile 'com.google.zxing:javase:3.3.0'
-    compile 'com.journeyapps:zxing-android-embedded:3.6.0'
+    //implementation 'com.mapbox.mapboxsdk:mapbox-android-sdk:7.0.0'
+    implementation "com.google.zxing:core:3.3.0"  //changed
+    implementation 'com.google.zxing:javase:3.3.0' //changed
+    implementation 'com.journeyapps:zxing-android-embedded:3.6.0' //changed
 }

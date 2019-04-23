@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.whartonsummit.android_app.pwcs_android.Activities.ScheduleActivity">
+    tools:context="com.whartonsummit.android.pwcs_android.Activities.ScheduleActivity">
 
     <!-- Layout to contain contents of main body of screen (drawer will slide over this) -->
     <android.support.constraint.ConstraintLayout
@@ -40,7 +40,17 @@
             app:stl_indicatorThickness="3dp"
             app:stl_underlineColor="#FFF"
             app:stl_underlineThickness="0dp"
+            app:stl_distributeEvenly="true"
             />
+        <!--<android.support.design.widget.TabLayout-->
+            <!--android:id="@+id/view_pager_tab"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--app:layout_constraintTop_toBottomOf="@+id/app_toolbar"-->
+            <!--android:background="@color/tab_bg"-->
+            <!--app:tabMode="fixed"-->
+            <!--app:tabGravity="fill" />-->
+        <!--<android:support.v4.view.ViewPager />-->
 
         <android.support.v4.view.ViewPager
             android:id="@+id/viewpager"

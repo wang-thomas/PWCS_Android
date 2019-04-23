@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.whartonsummit.android_app.pwcs_android">
+    package="com.whartonsummit.android.pwcs_android">
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:name=".PWCSApp"
@@ -28,8 +27,6 @@
         <activity android:name=".Activities.PanelDetailsActivity" />
         <activity android:name=".Activities.EventDetailsActivity" />
         <activity android:name=".Activities.SpeakerDetailsActivity" />
-        <activity android:name=".Activities.ContactsActivity" />
-        <activity android:name=".Activities.ContactDetailsActivity"></activity>
         <activity
             android:name="com.journeyapps.barcodescanner.CaptureActivity"
             android:screenOrientation="portrait"

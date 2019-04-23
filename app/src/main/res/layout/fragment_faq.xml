@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.whartonsummit.android_app.pwcs_android.Fragments.FaqFragment">
+    tools:context="com.whartonsummit.android.pwcs_android.Fragments.FaqFragment">
 
     <ExpandableListView
         android:id="@+id/faq_table"

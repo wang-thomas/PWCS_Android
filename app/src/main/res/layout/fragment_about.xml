@@ -68,7 +68,7 @@
                         android:layout_marginEnd="32dp"
                         android:layout_marginStart="32dp"
                         android:layout_marginTop="16dp"
-                        android:text="© 2018 whartonsummit.org, courtesy of Daning Tu, Lula Chou, Mindy Ma and Zhilei Zheng"
+                        android:text="© 2019 Penn Wharton China Summit, courtesy of Zhilei Zheng, Joey Zhong, and Thomas Wang"
                         android:textAlignment="center"
                         card_view:layout_constraintBottom_toBottomOf="parent"
                         card_view:layout_constraintEnd_toEndOf="parent"

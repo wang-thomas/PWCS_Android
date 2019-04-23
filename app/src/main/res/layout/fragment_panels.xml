@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.whartonsummit.android_app.pwcs_android.Fragments.PanelsFragment">
+    tools:context="com.whartonsummit.android.pwcs_android.Fragments.PanelsFragment">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerView"

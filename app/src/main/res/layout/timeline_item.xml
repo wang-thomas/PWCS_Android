@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         app:markerSize="20dp"
-        app:marker = "@drawable/ic_event_available"
+        app:marker = "@drawable/ic_round_donut_large_24px"
         app:lineSize="3dp"
         app:line="@color/colorPrimaryDark"/>
 
@@ -25,6 +25,7 @@
         android:layout_marginLeft="10dp"
         android:layout_gravity="center_vertical"
         app:cardElevation="1dp"
+        android:clickable="true"
         app:contentPadding="15dp">
 
         <android.support.constraint.ConstraintLayout
@@ -41,6 +42,7 @@
                 android:textSize="14dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
+                android:textStyle="bold"
                 tools:text="8AM - 9AM" />
 
             <android.support.v7.widget.AppCompatTextView
@@ -48,10 +50,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@android:color/black"
-                android:textSize="18dp"
+                android:textSize="20dp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/text_timeline_date"
+
                 tools:text="Finance Panel" />
 
             <android.support.v7.widget.AppCompatTextView
@@ -61,7 +64,7 @@
                 android:layout_marginTop="5dp"
                 android:textAlignment="viewStart"
                 android:textColor="@android:color/darker_gray"
-                android:textSize="12dp"
+                android:textSize="14dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/text_timeline_title"
                 tools:text="Your RecyclerViewHolder should have an extra paramenter in constructor i.e viewType from onCreateViewHolder. You would also have to call the method initLine(viewType) in constructor definition." />
@@ -73,7 +76,8 @@
                 android:layout_marginStart="8dp"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="14dp"
-                android:text="\@ Annenburg Center"
+                android:text="\@ Annenberg Center"
+                android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/text_timeline_date"
                 app:layout_constraintTop_toTopOf="parent" />
 
